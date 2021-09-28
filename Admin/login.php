@@ -14,7 +14,7 @@ require 'clases/clsUsuario.php'; // clase de usuario
     <title>Login</title>
     <link href="<?php echo $url_site; ?>dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $url_site; ?>css/font-awesome.css" rel="stylesheet">
-    <link href="<?php echo $url_site; ?>css/style.css" rel="stylesheet">
+    <link href="<?php echo $url_site; ?>css/style1.css" rel="stylesheet">
     <!-- style sin ruteo -->
 
 </head>
