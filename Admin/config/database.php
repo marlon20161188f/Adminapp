@@ -4,10 +4,10 @@
 
     class Conexion {
         private $tipo_de_base = 'mysql';
-        private $host = 'localhost';
-        private $nombre_de_base = 'controllocal';
-        private $usuario = 'roots';
-        private $contrasena = '';
+        private $host = 'b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com';
+        private $nombre_de_base = 'b7nvpy1vtadduxzlqosv';
+        private $usuario = 'ulcoechpsy7vemc6';
+        private $contrasena = 'poShw9zjQ6zjJHwl5bZ3';
         private static $instancia = null;
 
         private function __construct(){
