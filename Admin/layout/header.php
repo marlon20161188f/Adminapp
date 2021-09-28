@@ -14,7 +14,7 @@
    <link href="<?php echo $url_site; ?>css/font-awesome.css" rel="stylesheet">
    <link href="<?php echo $url_site; ?>css/sb-admin-2.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <link href="<?php echo $url_site; ?>css/style1.css" rel="stylesheet">
+    <link href="<?php echo $url_site; ?>css/style.css" rel="stylesheet">
 	
 	<link href="<?php echo $url_site; ?>css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link

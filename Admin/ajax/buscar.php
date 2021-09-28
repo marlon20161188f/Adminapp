@@ -1,5 +1,5 @@
 <?php
-$mysqli=new mysqli("b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com","ulcoechpsy7vemc6","poShw9zjQ6zjJHwl5bZ3","b7nvpy1vtadduxzlqosv");
+$mysqli=new mysqli("localhost","root","","controllocal");
 $salida="";
 if(isset($_POST['consulta'])){
     $q=$mysqli->real_escape_string($_POST['consulta']);
