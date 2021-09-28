@@ -1,5 +1,5 @@
 <?php
-    $list = clsPago::Listar(Conexion::getInstancia());
+    $list = clsIngreso::Listar(Conexion::getInstancia());
     //$list_estados = clsEstado::ListarActivo(Conexion::getInstancia());
 ?>
 <div class="col-sm-12">
