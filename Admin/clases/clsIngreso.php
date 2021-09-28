@@ -18,8 +18,7 @@ class clsIngreso
 
     public static function Listar($conexion){
         try {
-            $query = $conexion->prepare("SELECT registro_ingreso.id, registro_ingreso.placa, registro_ingreso.fecha, registro_ingreso.usuario FROM registro_ingreso
-             ORDER BY id DESC                            ");
+            $query = $conexion->prepare("SELECT * FROM b7nvpy1vtadduxzlqosv.registro_ingreso; ");
             $query->execute();
             
                 return $query->fetchAll();
