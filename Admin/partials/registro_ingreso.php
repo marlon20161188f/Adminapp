@@ -9,9 +9,9 @@
             <div class="card mb-4">
                 <div class="card-block">
                     <div class="col-12 widget-right no-padding">
-                        <button class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#RegisterModal">
-                            <i class="fa fa-plus"></i> Registrar nuevo vehículo
-                        </button>
+                        <input type="hidden" class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#RegisterModal">
+                            <!-- <i class="fa fa-plus"></i> Registrar nuevo vehículo -->
+                        
                     </div>
                     <h3 class="card-title"> Registro de ingreso vehicular</h3>
 
@@ -24,7 +24,7 @@
                                     <th>COLOR</th>
                                     <th>ESTACIONAMIENTO</th>
                                     <th>FECHA</th>
-                                    <th>OPCIONES</th>
+                                    <!-- <th>OPCIONES</th> -->
                                 </tr>
                             </thead>
                             <tbody>
