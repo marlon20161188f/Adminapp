@@ -158,7 +158,7 @@
                     if($usuario->id_tipo_usuario == '1'){
                         echo '<li class="nav-item"><a class="nav-link active" href="'.$url_site.'index.php"><em class="fa fa-address-book"></em> Consulta</a></li>
 					 <li class="nav-item"><a class="nav-link" href="'.$url_site.'registrovehicular/"><em class="fa fa-database"></em> Vehículos registrados</a></li>
-                    <li class="nav-item"><a class="nav-link" href="'. $url_site.'registroingresos/"><em class="fa fa-database"></em> REGISTRO DE INGRESO</a></li>';
+                    <li class="nav-item"><a class="nav-link" href="'. $url_site.'registroingresos/"><em class="fa fa-database"></em> Historial de ingreso</a></li>';
                     }
                     ?>
 
