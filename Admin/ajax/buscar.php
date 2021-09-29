@@ -44,7 +44,7 @@ if(isset($_POST['consulta'])){
                 <button type='submit' class='btn btn-primary  btn-lg '>Nueva Consulta</button>
                  </div>";}
                 else{
-                  if($mysqli->query($sql) === true){
+                  if($mysqli->query($sql) === false){
                     echo $salida.="<div><form action=''></form>REGISTRO EXITOSO</div>";
                    while($fila=$resultado->fetch_assoc()){
                     $salida.="<table class='tabla_datos heading text-center' width='98%' >
