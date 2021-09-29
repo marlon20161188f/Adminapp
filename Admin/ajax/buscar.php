@@ -1,6 +1,6 @@
 <?php
  require '../config/database.php';
-$mysqli=new mysqli("localhost","root","","controllocal");
+$mysqli=new mysqli("bvtxlbfc6hiekx3gjhka-mysql.services.clever-cloud.com","uast1uqiudfpttur","uast1uqiudfpttur","bvtxlbfc6hiekx3gjhka");
 $salida="";
 if(isset($_POST['consulta'])){
     $q=$mysqli->real_escape_string($_POST['consulta']);
@@ -122,7 +122,7 @@ if(isset($_POST['consulta'])){
 </div>
 
 ";
-                }
+}
     }
 }else {
     $salida="";
