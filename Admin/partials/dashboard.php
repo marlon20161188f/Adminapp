@@ -6,8 +6,9 @@
 </head>
 <div class="container text-center" style="width: 1000px;">
 <div ><div class="container text-center" style="width: 550px;">
-<h2 class="float-left text-center text-md-center" style="color:white;">INGRESE NÚMERO DE PLACA</h2>
-      <img class="d-block w-20" src="<?php echo $url_site; ?>images/logo.jpeg" alt="First slide">
+<h2 class="float-left text-center text-md-center" style="color:#004FB9;line-height: 1;
+    text-rendering: optimizeLegibility;">INGRESE NÚMERO DE PLACA</h2>
+      <img style="border-radius: 20px; box-shadow: 0 0 8px 8px white inset;" class=" circle d-block w-100" width="900" height="400"src="<?php echo $url_site; ?>images/logo.jpeg" alt="First slide">
       </div>
 </div>
             <div class="well well-sm ">

@@ -1,5 +1,7 @@
 /*Google Fonts*/
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"); */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i");
+
 .chart, .easypiechart {
   filter: hue-rotate(0deg) saturate(100%); }
   .carousel-inn {
@@ -9,9 +11,10 @@
   }
 body {
   background-image: linear-gradient(
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)
-  ),url("");
+    rgba(201, 222, 248, 1),
+    rgba(255, 255, 255, 0.8)
+  /* ),url("https://www.wallpaperuse.com/wallp/55-550190_m.jpg"); */
+   ),url("");
   background-size: cover;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;

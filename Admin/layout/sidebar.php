@@ -1,23 +1,5 @@
 <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
-<header class="page-header row justify-center" >
-
-
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="background-color:#99e6cd">
-
-	<!-- Sidebar Toggle (Topbar) -->
-	<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-		<i class="fa fa-bars"></i>
-	</button>
-
-	<!-- Topbar Search -->
-	
-	<form
-		 class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search " >
-		
-	</form>
-
-	<!-- Topbar Navbar -->
-	<ul class="navbar-nav ml-auto " >
+     <ul class="navbar-nav ml-auto " >
 
 		<!-- Nav Item - Search Dropdown (Visible Only XS) -->
 		<!-- <li class="nav-item dropdown no-arrow d-sm-none">
@@ -31,15 +13,7 @@
 				<form class="form-inline mr-auto w-100 navbar-search">
 					<div class="input-group">
 						<input type="text" class="form-control bg-light border-0 small"
-							placeholder="Search for..." aria-label="Search"
-							aria-describedby="basic-addon2">
-						<div class="input-group-append">
-							<button class="btn btn-primary" type="button">
-								<i class="fas fa-search fa-sm"></i>
-							</button>
-						</div>
-					</div>
-				</form>
+							
 			</div>
 		</li> -->
 
@@ -163,42 +137,19 @@
 
 		<!-- Nav Item - User Information -->
 		<li class="nav-item dropdown no-arrow">
-			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			
 				<div>
 				<h4 class="mb-1"><?php echo $usuario->nombres; ?></h4>
 				<h6 class="text-muted"><?php echo $usuario->descripcion; ?></h6></span>
 				</div>
-				<img src="<?php echo $url_site; ?>images/profile.jpg" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
-			</a>
+                    
+				<img aling="justify"src="<?php echo $url_site; ?>images/profile.jpg" alt="profile photo" class="circle float-left profile-photo text-center" width="50" height="auto">
+			
 			<!-- Dropdown - User Information -->
-			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-				aria-labelledby="userDropdown">
-				<a class="dropdown-item" href="#">
-					<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-					Profile
-				</a>
-				<a class="dropdown-item" href="#">
-					<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-					Settings
-				</a>
-				<a class="dropdown-item" href="#">
-					<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-					Activity Log
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="http://Adminapp.me/index.php" class="dropdown-item " class="logout-button"><em class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></em> Logout</a>
-			</div>
+			
 		</li>
 
 	</ul>
-</nav>
-<div class="col-md-6 col-lg-8" >
-		<h1 type="hidden" class="float-left text-center text-md-center">Administrador de ingreso vehicular</h1>
-	</div>
-
-	<div class="clear"></div>
-</header>
 				<h1 class="site-title"><a href="<?php echo $url_site; ?>index.php"><em class="fa fa-user-circle"></em> ADMIN</a></h1>
 													
 				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-tachometer"></em></a>
