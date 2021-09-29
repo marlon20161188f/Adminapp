@@ -7,7 +7,7 @@
         private $host = 'b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com';
         private $nombre_de_base = 'b7nvpy1vtadduxzlqosv';
         private $usuario = 'ulcoechpsy7vemc6';
-        private $contrasena = 'ulcoechpsy7vemc6';
+        private $contrasena = '7LovxxKNZy2QYFFlvuSB';
         private static $instancia = null;
 
         private function __construct(){
