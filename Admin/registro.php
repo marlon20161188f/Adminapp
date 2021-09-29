@@ -62,7 +62,7 @@ require 'clases/clsUsuario.php'; // clase de usuario
 
                             <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">REGISTRAR</button>
                                 <br/>
-                                Si usted ya tiene una cuenta creada, por favor inicie sesión en el siguiente enlace <a href="login.php">Iniciar Sesión</a>
+                                Si usted ya tiene una cuenta creada, por favor inicie sesión en el siguiente enlace <a href="index.php">Iniciar Sesión</a>
                         </fieldset>
                 </div>
                 </fieldset>
