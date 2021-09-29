@@ -7,7 +7,7 @@
 <div class="container text-center" style="width: 1000px;">
 <div ><div class="container text-center" style="width: 550px;">
 <h2 class="float-left text-center text-md-center" style="color:white;">INGRESE NÚMERO DE PLACA</h2>
-      <img class="d-block w-20" src="<?php echo $url_site; ?>images/estacionamiento1.jpg" alt="First slide">
+      <img class="d-block w-20" src="<?php echo $url_site; ?>images/logo.jpeg" alt="First slide">
       </div>
 </div>
             <div class="well well-sm ">
