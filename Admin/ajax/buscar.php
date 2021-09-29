@@ -44,7 +44,8 @@ if(isset($_POST['consulta'])){
                 <button type='submit' class='btn btn-primary  btn-lg '>Nueva Consulta</button>
                  </div>";}
                 else{
-                  $mysqli->query($sql);
+                  if($mysqli->query($sql) === true)
+                    echo $salida.="<div><form action=''></form>REGISTRO EXITOSO</div>";
                    while($fila=$resultado->fetch_assoc()){
                     $salida.="<table class='tabla_datos heading text-center' width='98%' >
                     <thead>
@@ -73,8 +74,9 @@ if(isset($_POST['consulta'])){
                    }
                     $salida.="</tbody></table><div class='form-group text-center'> 
                     <button type='submit' class='btn btn-primary  btn-lg ' onclick='Registrar();'><i class='fa fa-plus'></i>Registrar Ingreso</button>
-                     </div>"
-;
+                     </div>
+                     </div>
+             ";
 
                 }
     }
