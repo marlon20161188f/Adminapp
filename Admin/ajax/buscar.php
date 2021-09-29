@@ -6,7 +6,7 @@ if(isset($_POST['consulta'])){
     $query="SELECT placa,color,marca,estacionamiento FROM registro_vehicular
     WHERE placa LIKE '%".$q."%' OR marca LIKE '%".$q."%' OR color LIKE '%".$q."%'";
     $sql = "INSERT INTO registro_ingreso(placa)
-     VALUES('".$q."')";
+     VALUES('$q')";
     $resultado=$mysqli->query($query);
     if( $resultado->num_rows > 1){
         $salida.="<table class='tabla_datos heading text-center' width='98%'>
