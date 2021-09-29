@@ -764,10 +764,10 @@ table, td, tr, th, thead {
 
 .login-pag {
   background-image: linear-gradient(
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.1)
+    rgba(145, 161, 248, 0.8),
+    rgba(255, 255, 255, 0.8)
   /* ),url("https://www.wallpaperuse.com/wallp/55-550190_m.jpg"); */
-  ),url("https://www.wallpaperuse.com/wallp/55-550190_m.jpg");
+  ),url("");
 
   background-size: cover;}
   .login-pag .login-panel .btn {
