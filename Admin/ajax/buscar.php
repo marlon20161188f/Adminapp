@@ -70,9 +70,6 @@ if(isset($_POST['consulta'])){
                         
                    </tr>
                     ";
-                   }else{
-                    die("Error al insertar datos: " . $mysqli2->error);
-                }
                     $salida.="</tbody></table><div class='form-group text-center'> 
                     <button type='submit' class='btn btn-primary  btn-lg ' value='".$mysqli2->query($sql)."'><i class='fa fa-plus'></i>Registrar Ingreso</button>
                      </div>
@@ -80,7 +77,7 @@ if(isset($_POST['consulta'])){
              ";
 
                 }
-    }
+    }}
 }else {
     $salida="";
 }
