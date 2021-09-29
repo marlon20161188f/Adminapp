@@ -26,7 +26,7 @@ require 'clases/clsUsuario.php'; // clase de usuario
                 <div class="card-block">
                     <h3 class="card-title text-center mt-1">INICIAR SESIÓN</h3>
                     <div class="divider mt-0"></div>
-                    <form role="form" action="login.php" method="post">
+                    <form role="form" action="index.php" method="post">
                         <?php
                             if(isset($_POST['email'])){
                                 $validar = clsUsuario::ValidarCorreo(Conexion::getInstancia(),$_POST['email']);

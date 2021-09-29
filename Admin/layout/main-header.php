@@ -186,7 +186,7 @@
 					Activity Log
 				</a>
 				<div class="dropdown-divider"></div>
-				<a href="http://Adminapp.me/login.php" class="dropdown-item " class="logout-button"><em class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></em> Logout</a>
+				<a href="http://Adminapp.me/index.php" class="dropdown-item " class="logout-button"><em class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></em> Logout</a>
 			</div>
 		</li>
 
