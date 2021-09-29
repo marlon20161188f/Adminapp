@@ -1,4 +1,5 @@
 <?php
+ require '../config/database.php';
 $mysqli=new mysqli("localhost","root","","controllocal");
 $salida="";
 if(isset($_POST['consulta'])){
