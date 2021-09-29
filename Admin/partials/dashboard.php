@@ -6,9 +6,7 @@
   </style>
 </head>
 <div class="container text-center" style="width: 1000px;">
-<div class="col-md-6 col-lg-8" >
-		<h1 class="float-left text-center text-md-center">INGRESE NÚMERO DE PLACA</h1>
-	</div>
+		<h1 class="float-left text-center text-md-center" style="color: white">INGRESE NÚMERO DE PLACA</h1>
 <div ><div class="container text-center" style="width: 550px;">
       <img class="d-block w-20" src="<?php echo $url_site; ?>images/estacionamiento1.jpg" alt="First slide">
       </div>
