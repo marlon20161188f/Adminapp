@@ -11,58 +11,55 @@ require 'clases/clsUsuario.php'; // clase de usuario
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Registro</title>
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <title>Login</title>
+    <link href="<?php echo $url_site; ?>dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $url_site; ?>css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo $url_site; ?>css/style.css" rel="stylesheet">
+    <!-- style sin ruteo -->
+
 </head>
-<body class="login-page">
+<body class="login-pag" >
 <div class="container-fluid" id="wrapper">
     <div class="row">
         <main class="col-xs-10 col-sm-8 col-md-4 m-auto ">
             <div class="login-panel card mt-5">
                 <div class="card-block">
-                    <h3 class="card-title text-center mt-1">REGISTRARSE</h3>
+                    <h3 class="card-title text-center mt-1">INICIAR SESIÓN</h3>
                     <div class="divider mt-0"></div>
-                    <form role="form" action="registro.php" method="post">
+                    <form role="form" action="login.php" method="post">
                         <?php
                             if(isset($_POST['email'])){
                                 $validar = clsUsuario::ValidarCorreo(Conexion::getInstancia(),$_POST['email']);
+
                                 if($validar){
-                                    echo '<div class="alert bg-danger">
-                                                Error, el correo ya se encuentra en uso, intente con otro correo.
-                                            </div>';
-                                }else{
-                                    $registro = clsUsuario::Registro2(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['email'], $_POST['clave']);
-                                    if($registro > 0){
-                                        echo '<div class="alert bg-success">
-                                                Bienvenido usted se registró correctamente.
-                                            </div>';
-                                        include('email.php');
+                                    $validar_clave = clsUsuario::ValidarClave(Conexion::getInstancia(), $_POST['clave'], $_POST['email']);
+                                    if($validar_clave){
+                                        $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_POST['email']);
+                                        $_SESSION['email'] = $usuario->correo;
+                                        if($usuario->id_tipo_usuario == 3){
+                                            header('Location: http://resumeucci.me/');
+                                        }else{
+                                            header('Location: index.php');
+                                        }
+                                    }else{
+                                        echo '<div class="alert bg-danger">El correo o la contraseña son incorrectos.</div>';
                                     }
+                                }else{
+                                    echo '<div class="alert bg-danger">No se encontró ninguna cuenta con el correo ingresado.</div>';
                                 }
-
-
                             }
                         ?>
-
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Ingrese nombres" name="nombres" type="text" autofocus="">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Ingrese apellidos" name="apellidos" type="text" >
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Ingrese email" name="email" type="email">
+                                <input class="form-control" placeholder="Ingrese email" name="email" type="email" autofocus="">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Ingrese contraseña" name="clave" type="password" value="">
                             </div>
 
-                            <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">REGISTRAR</button>
-                                <br/>
-                                Si usted ya tiene una cuenta creada, por favor inicie sesión en el siguiente enlace <a href="login.php">Iniciar Sesión</a>
+                            <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">INGRESAR</button>
+                        <br/>
+                                Si usted no tiene una cuenta creada, por favor cree una nueva cuenta en este enlace: <a href="registro.php">Registrar cuenta</a>
                         </fieldset>
                 </div>
                 </fieldset>
@@ -73,15 +70,14 @@ require 'clases/clsUsuario.php'; // clase de usuario
 </div>
 </div>
 
-
 <?php
-    if(isset($_POST['email'])){
-        echo '<script  type="text/javascript">
+if(isset($_POST['email'])){
+    echo '<script  type="text/javascript">
     window.setTimeout(function(){
         $(\'.alert\').alert(\'close\');
     }, 3000);
 </script>';
-    }
+}
 ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
