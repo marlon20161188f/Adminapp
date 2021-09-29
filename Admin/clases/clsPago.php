@@ -1,8 +1,9 @@
 <?php
 class clsPago
 {
-    public static function Registro($conexion, $placa, $marca,$color,$estacionamiento,$fecha ){
+    public static function Registro($conexion, $placa, $marca,$color,$estacionamiento ){
         try {
+            $fecha = date("Y-m-d");
             $query = $conexion->prepare("INSERT INTO registro_vehicular( placa, marca, color, estacionamiento, fecha) VALUES( :placa, :marca, :color, :estacionamiento, :fecha)");
             $query->bindParam("placa", $placa, PDO::PARAM_STR);
             $query->bindParam("marca", $marca, PDO::PARAM_STR);
@@ -40,9 +41,9 @@ class clsPago
         }
     }
 
-    public static function Actualizar($conexion, $id, $placa, $marca,$color,$estacionamiento,$fecha){
+    public static function Actualizar($conexion, $id, $placa, $marca,$color,$estacionamiento){
         try {
-            
+            $fecha = date("Y-m-d");
             $query = $conexion->prepare("UPDATE registro_vehicular SET placa = :placa, marca = :marca, color = :color, estacionamiento = :estacionamiento, fecha = :fecha WHERE id = :id");
             $query->bindParam("id", $id, PDO::PARAM_STR);
             $query->bindParam("placa", $placa, PDO::PARAM_STR);
@@ -56,8 +57,9 @@ class clsPago
         }
     }
     
-    public static function Validar($conexion,  $placa, $marca,$color,$estacionamiento,$fecha){
+    public static function Validar($conexion,  $placa, $marca,$color,$estacionamiento){
         try {
+            $fecha = date("Y-m-d");
             $query = $conexion->prepare("SELECT placa FROM registro_vehicular WHERE placa = :placa AND marca = :marca AND color = :color AND estacionamiento = :estacionamiento AND fecha = :fecha");
             $query->bindParam("placa", $placa, PDO::PARAM_STR);
             $query->bindParam("marca", $marca, PDO::PARAM_STR);

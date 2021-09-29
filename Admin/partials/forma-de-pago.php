@@ -166,14 +166,14 @@
                     <input type="text" class="form-control input-sm" name="estacionamiento" id="estacionamiento" placeholder="Ingrese el estacionamiento del vehículo">
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="col-12 control-label no-padding" for="fecha">Fecha de registro</label>
                 <div class="col-12 no-padding">
-                    <!-- <input type="hidden" name="id" id="id">
-                    <input type="hidden" name="option" value="U"> -->
+                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="option" value="U"> 
                     <input type="text" class="form-control input-sm" name="fecha" id="fecha" placeholder="Ingrese la fecha del registro del vehículo">
                 </div>
-            </div>
+            </div> -->
             </div>
         </form>
       </div>

@@ -6,12 +6,12 @@
     require '../clases/clsPago.php';
 
     if($_POST['option'] == 'C'){
-        $validar = clsPago::Validar(Conexion::getInstancia(), $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento'], $_POST['fecha']);
+        $validar = clsPago::Validar(Conexion::getInstancia(), $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento']);
 
         if($validar == true){
             echo json_encode(array('success' => 2));
         }else{
-            $registro = clsPago::Registro(Conexion::getInstancia(),  $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento'], $_POST['fecha']);
+            $registro = clsPago::Registro(Conexion::getInstancia(),  $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento']);
             if($registro > 0){
                 echo json_encode(array('success' => 1));
             }else{
@@ -21,11 +21,11 @@
     }
 
     if($_POST['option'] == 'U'){
-        $validar = clsPago::Validar(Conexion::getInstancia(), $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento'], $_POST['fecha']);
+        $validar = clsPago::Validar(Conexion::getInstancia(), $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento']);
         if($validar == true){
             echo json_encode(array('success' => 2));
         }else{
-            clsPago::Actualizar(Conexion::getInstancia(), $_POST['id'],  $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento'], $_POST['fecha']);
+            clsPago::Actualizar(Conexion::getInstancia(), $_POST['id'],  $_POST['placa'], $_POST['marca'], $_POST['color'], $_POST['estacionamiento']);
             echo json_encode(array('success' => 1));
         } 
     }

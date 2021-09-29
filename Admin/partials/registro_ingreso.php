@@ -24,6 +24,7 @@
                                     <th>COLOR</th>
                                     <th>ESTACIONAMIENTO</th>
                                     <th>FECHA</th>
+                                    <th>USURAIO</th>
                                     <th hidden>OPCIONES</th>
                                 </tr>
                             </thead>
@@ -37,6 +38,7 @@
                                         <td><?php echo $item['color']; ?></td>
                                         <td><?php echo $item['estacionamiento']; ?></td>
                                         <td><?php echo $item['fecha']; ?></td>
+                                        <td><?php echo $usuario->nombres; ?></td>
                                         <td>
                                             <input  id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="hidden" onclick="editModal(<?php echo $item['id']; ?>);" data-id="<?php echo $item['id']; ?>" data-placa="<?php echo $item['placa']; ?>"data-marca="<?php echo $item['marca']; ?>" data-color="<?php echo $item['color']; ?>"data-estacionamiento="<?php echo $item['estacionamiento']; ?>"data-fecha="<?php echo $item['fecha']; ?>"> <!-- data-estado="<?php //echo $item['id_provedor']; ?>"-->
                                                 <!-- <span class="fa fa-pencil-alt"></span> -->
