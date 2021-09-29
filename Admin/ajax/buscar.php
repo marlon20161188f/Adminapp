@@ -1,12 +1,13 @@
 <?php
 $mysqli=new mysqli("b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com","ulcoechpsy7vemc6","poShw9zjQ6zjJHwl5bZ3","b7nvpy1vtadduxzlqosv");
+$mysqli2=new mysqli("b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com","ulcoechpsy7vemc6","poShw9zjQ6zjJHwl5bZ3","b7nvpy1vtadduxzlqosv");
 $salida="";
 if(isset($_POST['consulta'])){
     $q=$mysqli->real_escape_string($_POST['consulta']);
     $query="SELECT placa,color,marca,estacionamiento FROM registro_vehicular
     WHERE placa LIKE '%".$q."%' OR marca LIKE '%".$q."%' OR color LIKE '%".$q."%'";
     $sql = "INSERT INTO registro_ingreso(placa)
-     VALUES('holi')";
+     VALUES('".$q."')";
     $resultado=$mysqli->query($query);
     if( $resultado->num_rows > 1){
         $salida.="<table class='tabla_datos heading text-center' width='98%'>
@@ -44,7 +45,7 @@ if(isset($_POST['consulta'])){
                 <button type='submit' class='btn btn-primary  btn-lg '>Nueva Consulta</button>
                  </div>";}
                 else{
-                  if($mysqli->query($sql) === true){
+                  if($mysqli2->query($sql) === true){
                     echo $salida.="<div><form action=''></form>REGISTRO EXITOSO</div>";
                    while($fila=$resultado->fetch_assoc()){
                     $salida.="<table class='tabla_datos heading text-center' width='98%' >
