@@ -11,7 +11,7 @@
   }
 body {
   background-image: linear-gradient(
-    rgba(145, 161, 248, 0.8),
+    rgba(86, 244, 250, 0.8),
     rgba(255, 255, 255, 0.8)
   /* ),url("https://www.wallpaperuse.com/wallp/55-550190_m.jpg"); */
    ),url("");
@@ -767,7 +767,7 @@ table, td, tr, th, thead {
 
 .login-pag {
   background-image: linear-gradient(
-    rgba(145, 161, 248, 0.8),
+    rgba(86, 244, 250, 0.8),
     rgba(255, 255, 255, 0.8)
   /* ),url("https://www.wallpaperuse.com/wallp/55-550190_m.jpg"); */
   ),url("");
