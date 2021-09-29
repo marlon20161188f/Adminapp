@@ -1,6 +1,6 @@
 <?php
  require '../config/database.php';
-$mysqli=new mysqli("bvtxlbfc6hiekx3gjhka-mysql.services.clever-cloud.com","uast1uqiudfpttur","7LovxxKNZy2QYFFlvuSB","bvtxlbfc6hiekx3gjhka");
+$mysqli=new mysqli("b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com","ulcoechpsy7vemc6","poShw9zjQ6zjJHwl5bZ3","b7nvpy1vtadduxzlqosv");
 $salida="";
 if(isset($_POST['consulta'])){
     $q=$mysqli->real_escape_string($_POST['consulta']);
