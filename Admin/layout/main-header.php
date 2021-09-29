@@ -192,5 +192,9 @@
 
 	</ul>
 </nav>
+<div class="col-md-6 col-lg-8" >
+		<h1 class="float-left text-center text-md-center">INGRESE NÚMERO DE PLACA</h1>
+	</div>
+
 	<div class="clear"></div>
 </header>
