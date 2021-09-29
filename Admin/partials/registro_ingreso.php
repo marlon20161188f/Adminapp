@@ -24,7 +24,7 @@
                                     <th>COLOR</th>
                                     <th>ESTACIONAMIENTO</th>
                                     <th>FECHA</th>
-                                    <!-- <th>OPCIONES</th> -->
+                                    <th hidden>OPCIONES</th>
                                 </tr>
                             </thead>
                             <tbody>
