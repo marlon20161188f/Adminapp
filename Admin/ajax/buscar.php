@@ -45,8 +45,6 @@ if(isset($_POST['consulta'])){
                 <button type='submit' class='btn btn-primary  btn-lg '>Nueva Consulta</button>
                  </div>";}
                 else{
-                  if($mysqli2->query($sql) === true){
-                    echo $salida.="<div><form action=''></form>REGISTRO EXITOSO</div>";
                    while($fila=$resultado->fetch_assoc()){
                     $salida.="<table class='tabla_datos heading text-center' width='98%' >
                     <thead>
@@ -72,11 +70,11 @@ if(isset($_POST['consulta'])){
                         
                    </tr>
                     ";
-                   }}else{
+                   }else{
                     die("Error al insertar datos: " . $mysqli2->error);
                 }
                     $salida.="</tbody></table><div class='form-group text-center'> 
-                    <button type='submit' class='btn btn-primary  btn-lg ' '><i class='fa fa-plus'></i>Registrar Ingreso</button>
+                    <button type='submit' class='btn btn-primary  btn-lg ' value='".$mysqli2->query($sql)."'><i class='fa fa-plus'></i>Registrar Ingreso</button>
                      </div>
                      </div>
              ";
