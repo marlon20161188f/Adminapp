@@ -18,9 +18,9 @@ class clsIngreso
 
     public static function Listar($conexion){
         try {
-            $query = $conexion->prepare("SELECT registro_vehicular.marca registro_vehicular.color registro_vehicular.estacionamiento registro_ingreso.id, registro_ingreso.placa, registro_ingreso.fecha, registro_ingreso.usuario FROM registro_ingreso
+            $query = $conexion->prepare("SELECT registro_vehicular.marca, registro_vehicular.color, registro_vehicular.estacionamiento, registro_ingreso.id, registro_ingreso.placa, registro_ingreso.fecha, registro_ingreso.usuario FROM registro_ingreso
             INNER JOIN registro_vehicular ON registro_ingreso.placa=registro_vehicular.placa
-             ORDER BY id DESC                            ");
+             ORDER BY id DESC ");
             $query->execute();
             
                 return $query->fetchAll();
