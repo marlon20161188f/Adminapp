@@ -44,6 +44,7 @@ if(isset($_POST['consulta'])){
                 <button type='submit' class='btn btn-primary  btn-lg '>Nueva Consulta</button>
                  </div>";}
                 else{
+                  $mysqli->query($sql);
                    while($fila=$resultado->fetch_assoc()){
                     $salida.="<table class='tabla_datos heading text-center' width='98%' >
                     <thead>
@@ -72,54 +73,8 @@ if(isset($_POST['consulta'])){
                    }
                     $salida.="</tbody></table><div class='form-group text-center'> 
                     <button type='submit' class='btn btn-primary  btn-lg ' onclick='Registrar();'><i class='fa fa-plus'></i>Registrar Ingreso</button>
-                     </div>
-                     </div>
-                     </div>
-<div class='modal fade' id='RegisterModal' data-backdrop='static' data-keyboard='false' tabindex='-1' aria-labelledby='RegisterModal' aria-hidden='true'>
-  <div class='modal-dialog modal-dialog-centered modal-lg'>
-    <div class='modal-content'>
-      <div class='modal-header'>
-        <h5 class='modal-title' id='staticBackdropLabel'>Registrar Ingerso del Vehículo</h5>
-        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-          <span aria-hidden='true'>&times;</span>
-        </button>
-      </div>
-      <div class='modal-body'>
-        <form class='form-horizontal' id='register' method='POST'>
-            <div class='row'>
-                <div class='col-md-12'>
-                <label class='col-12 control-label no-padding' for='nombre'>¿ESTA SEGURO QUE QUIERE REGISTRAR EL INGRESO DE ESTE VEHÍCULO?</label>
-                    <div class='form-group'>
-                        <label class='col-12 control-label no-padding' for='nombre'>verifique la placa antes de proceder:</label>
-                        <div class='col-12 no-padding'>
-                            <input type='text' class='form-control' name='placa' id='nombre' value=".$q." placeholder='Ingrese el nombre del establecimiento' autocomplete='off'>
-                            <input type='hidden' name='option' value='C'>
-                        </div>
-                    </div>
-                </div>
-            </div>     
-             <div class='modal-footer'>
-            <button type='submit' class='btn btn-primary' onclick='registrar()'><i class='fa fa-save'></i>Registrar</button>
-          </div>
-          <div id='todolist'>
-          <script>
-  function registrar(){
-    <?php echo accion(); ?>;
-    document.write('<?php echo accion(); ?>');
-  }
-</script>
-<?php
-  function accion(){
-      if(".$mysqli->query($sql)." === true){
-      echo <div><form action=''></form></div>
-      
-          </div>
-        </form>
-    </div>
-  </div>
-</div>
-
-";
+                     </div>"
+;
 
                 }
     }
