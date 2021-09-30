@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Lima');
     $list = clsIngreso::Listar(Conexion::getInstancia());
     //$list_estados = clsEstado::ListarActivo(Conexion::getInstancia());
 ?>
