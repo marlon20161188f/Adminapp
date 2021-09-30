@@ -28,14 +28,13 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($list as $item) {     
+                                    foreach ($list_estados as $item) {     
                                 ?>
                                     <tr>
                                         <td><?php echo $item['nombres']; ?></td>
                                         <td><?php echo $item['apellidos']; ?></td>
                                         <td><?php echo $item['correo']; ?></td>
                                         <td><?php echo $item['descripcion']; ?></td>
-                                        <td><?php echo $usuario->nombres; ?></td>
                                         <td>
                                             <input  id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="button" onclick="editModal(<?php echo $item['id']; ?>);" data-id="<?php echo $item['id']; ?>" data-placa="<?php echo $item['placa']; ?>"data-marca="<?php echo $item['marca']; ?>" data-color="<?php echo $item['color']; ?>"data-estacionamiento="<?php echo $item['estacionamiento']; ?>"data-fecha="<?php echo $item['fecha']; ?>"> <!-- data-estado="<?php //echo $item['id_provedor']; ?>"-->
                                                  <span class="fa fa-pencil-alt"></span> 
