@@ -37,7 +37,9 @@ require 'clases/clsUsuario.php'; // clase de usuario
                                         $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_POST['email']);
                                         $_SESSION['email'] = $usuario->correo;
                                         if($usuario->id_tipo_usuario == 3){
-                                            header('Location: http://resumeucci.me/');
+                                            //header('Location: http://resumeucci.me/');
+                                            echo '<div class="alert bg-danger">SU CUENTA A SIDO REGISTRADA</div>';
+                                            echo '<div class="alert bg-danger">SU CUENTA NO TIENE CREDENCIALES</div>';
                                         }else{
                                             header('Location: index.php');
                                         }
