@@ -23,7 +23,7 @@
                                     <th>APELLIDOS</th>
                                     <th>CORREO</th>
                                     <th>DESCRIPCIÓN</th>
-                                    <th hidden>OPCIONES</th>
+                                    <th >OPCIONES</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,75 +57,7 @@
         </div>
     </section>
 </div>
-<!-- Modal Editar -->
-<div class="modal fade" id="EditModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="EditModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" id="edit">
-            <div class="form-group">
-                <label class="col-12 control-label no-padding" for="provedor">Descripción</label>
-                <div class="col-12 no-padding">
-                    <input type="hidden" name="id" id="id">
-                    <input type="hidden" name="option" value="U">
-                    <input type="text" class="form-control" name="provedor" id="provedor" placeholder="Ingrese la descripción del vehículo">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-12 control-label no-padding" for="provedor">Estado</label>
-                <div class="col-12 no-padding">
-                   <select class="form-control" id="id_provedor" name="id_provedor">
-                    <?php
-                          foreach ($list_estados as $item) {     
-                      ?>
-                          <option value="<?php echo $item['nombres']; ?>"><?php echo $item['apellidos']; ?></option>
-                      <?php } ?>
-                   </select>
-                </div>
-                
-            </div>
-            <div class="message" id="editMessage"></div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="EditarRegistro();"><i class="fa fa-save"></i> Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal Registrar -->
-<div class="modal fade" id="RegisterModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="RegisterModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Registrar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" id="register">
-            <div class="form-group">
-                <label class="col-12 control-label no-padding" for="provedor">Provedor</label>
-                <div class="col-12 no-padding">
-                    <input type="text" class="form-control" name="provedor" id="provedor" placeholder="Ingrese la descripción del vehículo">
-                    <input type="hidden" name="option" value="C">
-                </div>
-            </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="Registrar();"><i class="fa fa-save"></i> Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <script type="text/javascript">
  $(document).ready( function () {
