@@ -9,22 +9,44 @@
             <div class="card mb-4">
                 <div class="card-block">
                     <div class="col-12 widget-right no-padding">
-                        <button class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#RegisterModal">
-                            <i class="fa fa-plus"></i> Agregar Provedor
-                        </button>
+                        <input type="hidden" class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#RegisterModal">
+                            <!-- <i class="fa fa-plus"></i> Registrar nuevo vehículo -->
+                        
                     </div>
-                    <h3 class="card-title">Lista de Provedores</h3>
+                    <h3 class="card-title"> Lista de Usuarios Registrados</h3>
 
                     <div class="dataTables_wrapper container-fluid dt-bootstrap4">
                         <table class="table table-striped" width="100%" id='tabla'>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Provedor</th>
-                                    <th>Opciones</th>
+                                    <th>NOMBRES</th>
+                                    <th>APELLIDOS</th>
+                                    <th>CORREO</th>
+                                    <th>DESCRIPCIÓN</th>
+                                    <th hidden>OPCIONES</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    foreach ($list as $item) {     
+                                ?>
+                                    <tr>
+                                        <td><?php echo $item['nombres']; ?></td>
+                                        <td><?php echo $item['apellidos']; ?></td>
+                                        <td><?php echo $item['correo']; ?></td>
+                                        <td><?php echo $item['descripcion']; ?></td>
+                                        <td><?php echo $usuario->nombres; ?></td>
+                                        <td>
+                                            <input  id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="hidden" onclick="editModal(<?php echo $item['id']; ?>);" data-id="<?php echo $item['id']; ?>" data-placa="<?php echo $item['placa']; ?>"data-marca="<?php echo $item['marca']; ?>" data-color="<?php echo $item['color']; ?>"data-estacionamiento="<?php echo $item['estacionamiento']; ?>"data-fecha="<?php echo $item['fecha']; ?>"> <!-- data-estado="<?php //echo $item['id_provedor']; ?>"-->
+                                                <!-- <span class="fa fa-pencil-alt"></span> -->
+                                            
+                                            <input type="hidden" class="btn btn-secondary btn-sm btn-circle margin" onclick="Eliminar(<?php echo $item['id']; ?>)">
+                                                <!-- <span class="fa fa-trash"></span> -->
+                                            
+                                        </td>
+                                     </tr>
+                                <?php } ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -62,7 +84,7 @@
                     <?php
                           foreach ($list_estados as $item) {     
                       ?>
-                          <option value="<?php echo $item['id']; ?>"><?php echo $item['provedor']; ?></option>
+                          <option value="<?php echo $item['nombres']; ?>"><?php echo $item['apellidos']; ?></option>
                       <?php } ?>
                    </select>
                 </div>

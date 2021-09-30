@@ -2,7 +2,7 @@
     class clsEstado {
         public static function ListarActivo($conexion){
             try {
-                $query = $conexion->prepare("SELECT id, provedor FROM provedor WHERE id IN (1,2)");
+                $query = $conexion->prepare("SELECT U.id,U.nombres,U.apellidos,U.id_tipo_usuario,U.correo,T.descripcion FROM usuario U INNER JOIN tbltipo_usuario T ON U.id_tipo_usuario=T.id ");
                 $query->execute();
                 if($query->rowCount() > 0){
                     return $query->fetchAll();
