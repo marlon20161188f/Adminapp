@@ -38,8 +38,7 @@ require 'clases/clsUsuario.php'; // clase de usuario
                                         $_SESSION['email'] = $usuario->correo;
                                         if($usuario->id_tipo_usuario == 3){
                                             //header('Location: http://resumeucci.me/');
-                                            echo '<div class="alert bg-danger">SU CUENTA A SIDO REGISTRADA</div>';
-                                            echo '<div class="alert bg-danger">SU CUENTA NO TIENE CREDENCIALES</div>';
+                                            echo '<div class="alert bg-danger">SU CUENTA NO TIENE CREDENCIALES COMUNNIQUESE CON EL ADMINISTRADOR</div>';
                                         }else{
                                             header('Location: index.php');
                                         }
