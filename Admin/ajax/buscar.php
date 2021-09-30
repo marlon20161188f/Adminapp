@@ -6,8 +6,10 @@ if(isset($_POST['consulta'])){
     $q=$mysqli->real_escape_string($_POST['consulta']);
     $query="SELECT placa,color,marca,estacionamiento FROM registro_vehicular
     WHERE placa LIKE '%".$q."%' OR marca LIKE '%".$q."%' OR color LIKE '%".$q."%'";
-    $sql = "INSERT INTO registro_ingreso(placa)
-     VALUES('".$q."')";
+     date_default_timezone_set("America/Lima");
+     $fecha = date("Y-m-d H:i:s");
+    $sql = "INSERT INTO registro_ingreso(placa,fecha)
+     VALUES('".$q."','".$fecha."')";
     $resultado=$mysqli->query($query);
     if( $resultado->num_rows > 1){
         $salida.="<table class='tabla_datos heading text-center' width='98%'>
