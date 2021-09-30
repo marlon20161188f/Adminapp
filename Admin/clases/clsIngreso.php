@@ -4,7 +4,7 @@ class clsIngreso
     public static function Registro($conexion, $placa, $usuario ){
         try {
             date_default_timezone_set("America/Lima");
-            $fecha = date("Y-m-d H-5:i:s");
+            $fecha = date("Y-m-d ");
             $query = $conexion->prepare("INSERT INTO registro_ingreso( placa, fecha, usuario) VALUES( :placa, :fecha, :usuario)");
             $query->bindParam("placa", $placa, PDO::PARAM_STR);
             $query->bindParam("estacionamiento", $estacionamiento, PDO::PARAM_STR);
