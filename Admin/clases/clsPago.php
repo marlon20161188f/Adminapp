@@ -3,6 +3,7 @@ class clsPago
 {
     public static function Registro($conexion, $placa, $marca,$color,$estacionamiento ){
         try {
+            date_default_timezone_set('America/Los_Angeles');
             $fecha = date("Y-m-d");
             $query = $conexion->prepare("INSERT INTO registro_vehicular( placa, marca, color, estacionamiento, fecha) VALUES( :placa, :marca, :color, :estacionamiento, :fecha)");
             $query->bindParam("placa", $placa, PDO::PARAM_STR);
@@ -43,6 +44,7 @@ class clsPago
 
     public static function Actualizar($conexion, $id, $placa, $marca,$color,$estacionamiento){
         try {
+            date_default_timezone_set('America/Los_Angeles');
             $fecha = date("Y-m-d");
             $query = $conexion->prepare("UPDATE registro_vehicular SET placa = :placa, marca = :marca, color = :color, estacionamiento = :estacionamiento, fecha = :fecha WHERE id = :id");
             $query->bindParam("id", $id, PDO::PARAM_STR);
