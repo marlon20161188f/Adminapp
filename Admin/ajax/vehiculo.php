@@ -21,11 +21,11 @@
     }
 
     if($_POST['option'] == 'U'){
-        $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['id_tipo_usuario']);
+        $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['correo'], $_POST['id_tipo_usuario']);
         if($validar == true){
             echo json_encode(array('success' => 2));
         }else{
-            clsGestor::Actualizar(Conexion::getInstancia(), $_POST['id'],  $_POST['nombres'], $_POST['apellidos'], $_POST['id_tipo_usuario']);
+            clsGestor::Actualizar(Conexion::getInstancia(), $_POST['id'],  $_POST['nombres'], $_POST['apellidos'], $_POST['correo'], $_POST['id_tipo_usuario']);
             echo json_encode(array('success' => 1));
         } 
     }

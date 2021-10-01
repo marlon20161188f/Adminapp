@@ -38,28 +38,28 @@ class clsGestor
         }
     }
 
-    public static function Actualizar($conexion, $id, $nombres,$apellidos,$id_tipo_usuario){
+    public static function Actualizar($conexion, $id, $nombres,$apellidos,$correo,$id_tipo_usuario){
         try {
            
-            $query = $conexion->prepare("UPDATE usuario SET nombres = :nombres,apellidos= :apellidos, id_tipo_usuario = :id_tipo_usuario WHERE id = :id");
+            $query = $conexion->prepare("UPDATE usuario SET nombres = :nombres, correo = :correo, id_tipo_usuario = :id_tipo_usuario WHERE id = :id");
             $query->bindParam("id", $id, PDO::PARAM_STR);
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
-            
+            $query->bindParam("correo", $correo, PDO::PARAM_STR);
             $query->bindParam("id_tipo_usuario", $id_tipo_usuario, PDO::PARAM_STR);
-            
+            $query->bindParam("fecha", $fecha, PDO::PARAM_STR);
             $query->execute();
         } catch (PDOException $e) {
             exit($e->getMessage());
         }
     }
     
-    public static function Validar($conexion,$nombres,$apellidos,,$id_tipo_usuario){
+    public static function Validar($conexion,$nombres,$apellidos,$correo,$id_tipo_usuario){
         try {
-            $query = $conexion->prepare("SELECT nombres FROM usuario WHERE nombres = :nombres  AND apellidos = :apellidos AND id_tipo_usuario = :id_tipo_usuario ");
+            $query = $conexion->prepare("SELECT nombres FROM usuario WHERE nombres = :nombres  AND correo = :correo AND id_tipo_usuario = :id_tipo_usuario AND fecha = :fecha");
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             
-            $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
+            $query->bindParam("correo", $correo, PDO::PARAM_STR);
             $query->bindParam("id_tipo_usuario", $id_tipo_usuario, PDO::PARAM_STR);
             
             $query->execute();
