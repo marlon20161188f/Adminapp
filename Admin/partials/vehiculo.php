@@ -45,7 +45,9 @@
                                             echo'<td><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs">Activo</button></td>';
                                           }?>
                                         <td>
-                                        <button id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="button" onclick="editModal(<?php echo $item['id']; ?>);" data-id="<?php echo $item['id']; ?>" data-nombres="<?php echo $item['nombres']; ?>"data-apellidos="<?php echo $item['apellidos']; ?>" data-descripcion="<?php echo $item['descripcion']; ?>"> <!-- data-estado="<?php //echo $item['id_provedor']; ?>"-->
+                                        <button id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="button" onclick="editModal(<?php echo $item['id']; ?>);" 
+                                        data-id="<?php echo $item['id']; ?>" data-nombres="<?php echo $item['nombres']; ?>"data-apellidos="<?php echo $item['apellidos']; ?>" 
+                                        data-descripcion="<?php echo $item['descripcion']; ?>" data-id_tipo_usuario="<?php echo $item['id_tipo_usuario']; ?>"> <!-- data-estado="<?php //echo $item['id_provedor']; ?>"-->
                                                 <span class="fa fa-pencil-alt"></span>
                                             </button>
                                             <?php if($item['descripcion'] =="Administrador"){echo '<button class="btn btn-secondary btn-sm btn-circle margin" disabled onclick="Eliminar('.$item['id'].')">
@@ -159,7 +161,8 @@
         $('#EditModal').modal('show');
         $('#edit').find('#id').val($('#btn_' + id).data('id'));
         $('#edit').find('#nombres').val($('#btn_' + id).data('nombres'));
-        $('#edit').find('#apellidos').val($('#btn_' + id).data('apillidos')); 
+        $('#edit').find('#apellidos').val($('#btn_' + id).data('apellidos')); 
+        $('#edit').find('#id_tipo_usuario').val($('#btn_' + id).data('id_tipo_usuario')); 
         $('#edit').find('#descripcion').val($('#btn_' + id).data('descripcion')); 
         console.log($('#btn_' + id).data('id'));
     }
