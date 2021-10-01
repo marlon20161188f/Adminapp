@@ -559,7 +559,7 @@ pre code {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 456px) {
   .container, .container-sm {
     max-width: 540px;
   }
@@ -819,7 +819,7 @@ pre code {
   margin-left: 91.66667%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 456px) {
   .col-sm {
     flex-basis: 0;
     flex-grow: 1;
