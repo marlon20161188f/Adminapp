@@ -139,35 +139,38 @@
 		<li class="nav-item dropdown no-arrow">
 			
 				<div>
-				<h4 class="mb-1"><?php echo $usuario->nombres; ?></h4>
-				<h6 class="text-muted"><?php echo $usuario->descripcion; ?></h6></span>
+				<h3 class="mb-1 text-center"><?php echo $usuario->nombres; ?></h3>
+				<h5 class="text-muted text-center"><?php echo $usuario->descripcion; ?></h5>
+				<div clas="text-center"><img src="<?php echo $url_site; ?>images/profile.jpg" class="circle " width="100" height="auto"></div>
+</span>
 				</div>
                     
-				<img aling="justify"src="<?php echo $url_site; ?>images/profile.jpg" alt="profile photo" class="circle float-left profile-photo text-center" width="50" height="auto">
+				<!-- <img aling="justify"src="<?php echo $url_site; ?>images/profile.jpg" alt="profile photo" class="circle float-left profile-photo text-center" width="100" height="auto"> -->
 			
 			<!-- Dropdown - User Information -->
 			
 		</li>
 
 	</ul>
-				<h1 class="site-title"><a href="<?php echo $url_site; ?>index.php"><em class="fa fa-user-circle"></em> ADMIN</a></h1>
+				<!-- <h1 class="site-title"><a href="<?php //echo $url_site; ?>index.php"><em class="fa fa-user-circle"></em> ADMIN</a></h1> -->
 													
 				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-tachometer"></em></a>
 				<ul class="nav nav-pills flex-column sidebar-nav">
                     <?php
-                    if($usuario->id_tipo_usuario == '1'){
+                    if($usuario->id_tipo_usuario == '1'){//OPERADOR
+                        echo '<li class="nav-item"><a class="nav-link " href="'.$url_site.'index.php"><em class="fa fa-address-book"></em> Consulta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="'. $url_site.'registroingresos/"><em class="fa fa-database"></em> Historial de ingreso</a></li>';
+                    }
+					if($usuario->id_tipo_usuario == '2'){//SUPERVISOR
                         echo '<li class="nav-item"><a class="nav-link " href="'.$url_site.'index.php"><em class="fa fa-address-book"></em> Consulta</a></li>
 					 <li class="nav-item"><a class="nav-link" href="'.$url_site.'registrovehicular/"><em class="fa fa-database"></em> Vehículos registrados</a></li>
                     <li class="nav-item"><a class="nav-link" href="'. $url_site.'registroingresos/"><em class="fa fa-database"></em> Historial de ingreso</a></li>';
-                    }
-					if($usuario->id_tipo_usuario == '2'){
-                        echo '<li class="nav-item"><a class="nav-link " href="'.$url_site.'index.php"><em class="fa fa-address-book"></em> Consulta</a></li>
-					 <li class="nav-item"><a class="nav-link" href="'.$url_site.'registrovehicular/"><em class="fa fa-database"></em> Vehículos registrados</a></li>
-                    <li class="nav-item"><a class="nav-link" href="'. $url_site.'registroingresos/"><em class="fa fa-database"></em> Historial de ingreso</a></li>
-					<li class="nav-item"><a class="nav-link" href="'. $url_site.'vehiculo/"><em class="fa fa-database"></em> Gestor de usuarios</a></li>';
 				}
-					if($usuario->id_tipo_usuario == '3'){
-                        echo '<li class="nav-item"><a class="nav-link " href="'.$url_site.'index.php"><em class="fa fa-address-book"></em> Consulta</a></li>';
+					if($usuario->id_tipo_usuario == '3'){ //ADMINISTRADOR
+						 echo '<li class="nav-item"><a class="nav-link " href="'.$url_site.'index.php"><em class="fa fa-address-book"></em> Consulta</a></li>
+						<li class="nav-item"><a class="nav-link" href="'.$url_site.'registrovehicular/"><em class="fa fa-database"></em> Vehículos registrados</a></li>
+					   <li class="nav-item"><a class="nav-link" href="'. $url_site.'registroingresos/"><em class="fa fa-database"></em> Historial de ingreso</a></li>
+					   <li class="nav-item"><a class="nav-link" href="'. $url_site.'vehiculo/"><em class="fa fa-database"></em> Gestor de usuarios</a></li>';  
                     }
                     ?>
 

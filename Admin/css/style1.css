@@ -364,6 +364,7 @@ code {
     display: block !important; }
 
   .sidebar {
+    width: 50px;
     position: inherit;
     padding-bottom: 0px;
     margin-bottom: 1rem; }
@@ -715,7 +716,7 @@ ul.font-awesome-list {
     width: 33.3%; } }
 @media screen and (max-width: 768px) {
   ul.font-awesome-list li {
-    width: 50%; } }
+    width: 40%; } }
 .form-control {
   border: 1px solid #dfdfdf;
   background-color: #ffffff;
