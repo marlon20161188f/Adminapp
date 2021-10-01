@@ -54,7 +54,7 @@ class clsGestor
         }
     }
     
-    public static function Validar($conexion,  $nombres,$correo,$id_tipo_usuario){
+    public static function Validar($conexion,$nombres,$apellidos,$correo,$id_tipo_usuario){
         try {
             $query = $conexion->prepare("SELECT nombres FROM usuario WHERE nombres = :nombres  AND correo = :correo AND id_tipo_usuario = :id_tipo_usuario AND fecha = :fecha");
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
