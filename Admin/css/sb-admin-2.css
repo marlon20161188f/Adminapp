@@ -560,6 +560,9 @@ pre code {
 }
 
 @media (min-width: 456px) {
+  .sidebar {
+    width: 28rem !important;
+  }
   .container, .container-sm {
     max-width: 540px;
   }
