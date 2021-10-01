@@ -4,7 +4,7 @@
     define('CONTROLADOR', TRUE);
     require 'config/database.php'; //Clase de conexion
     require 'config/constantes.php'; //Constantes de la aplicacion
-    require 'clases/clsProvedor.php'; // clase de vehiculo
+    //require 'clases/clsProvedor.php'; // clase de vehiculo
     require 'clases/clsUsuario.php'; // clase de usuario
     require 'clases/clsEstado.php'; // clase de Estado
     require 'clases/clsPago.php'; // clase de pago
@@ -12,6 +12,7 @@
     require 'clases/clsConsulta.php'; // clase de establecimiento
     require 'clases/clsIngreso.php'; // clase de ingreso
     require 'clases/clsGestor.php'; // clase de gestion
+    require 'clases/clsCarrito.php'; // clase de gestion
     $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_SESSION['email']);
     // if($usuario->id_tipo_usuario == '3'){
     //     header('Location: https://admin-vehiculo.herokuapp.com/');
