@@ -356,7 +356,7 @@ code {
 .sidebar a:focus, .sidebar a:hover, .sidebar a:active {
   background-color: #5fe6b9 !important; }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 436px) {
   #wrapper .sidebar-nav {
     display: none; }
 
@@ -371,7 +371,7 @@ code {
 
   #menu-toggle {
     background-color: #5fe6b9; } }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 436px) {
   #wrapper.toggled .sidebar-nav {
     display: block; }
 
