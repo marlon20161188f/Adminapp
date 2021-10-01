@@ -12,9 +12,9 @@
     require 'clases/clsConsulta.php'; // clase de establecimiento
     require 'clases/clsIngreso.php'; // clase de ingreso
     $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_SESSION['email']);
-    if($usuario->id_tipo_usuario == '3'){
-        header('Location: http://resumeucci.me/');
-    }
+    // if($usuario->id_tipo_usuario == '3'){
+    //     header('Location: https://admin-vehiculo.herokuapp.com/');
+    // }
     //if(empty($_SESSION['administrador'])){
      //   header('Location: ../index.php');
     //}
