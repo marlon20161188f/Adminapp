@@ -11,6 +11,7 @@
     require 'clases/clsEstablecimiento.php'; // clase de establecimiento
     require 'clases/clsConsulta.php'; // clase de establecimiento
     require 'clases/clsIngreso.php'; // clase de ingreso
+    require 'clases/clsGestor.php'; // clase de gestion
     $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_SESSION['email']);
     // if($usuario->id_tipo_usuario == '3'){
     //     header('Location: https://admin-vehiculo.herokuapp.com/');
