@@ -36,7 +36,7 @@ require 'clases/clsUsuario.php'; // clase de usuario
                                     if($validar_clave){
                                         $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_POST['email']);
                                         $_SESSION['email'] = $usuario->correo;
-                                        if($usuario->id_tipo_usuario == 3){
+                                        if($usuario->id_estado == 0){
                                             //header('Location: http://resumeucci.me/');
                                             echo '<div class="alert bg-danger">SU CUENTA NO TIENE CREDENCIALES COMUNNIQUESE CON EL ADMINISTRADOR</div>';
                                         }else{

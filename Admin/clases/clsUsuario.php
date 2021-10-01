@@ -3,15 +3,15 @@
     exit;
 
     class clsUsuario {
-        public static function Registro($conexion, $dni, $nombres, $apellidos, $departamento, $provincia, $distrito, $celular, $correo, $ruc, $usuario, $contrasena){
+        public static function Registro($conexion, $dni, $nombres, $apellidos, $departamento, $provincia, $id_estado, $celular, $correo, $ruc, $usuario, $contrasena){
             try {
-                $query = $conexion->prepare("INSERT INTO usuario(dni, nombres, apellidos, id_departamento, id_provincia, id_distrito, celular, correo, ruc, usuario, clave) VALUES (:dni, :nombres, :apellidos, :id_departamento, :id_provincia, :id_distrito, :celular, :correo, :ruc, :usuario, :clave)");
+                $query = $conexion->prepare("INSERT INTO usuario(dni, nombres, apellidos, id_departamento, id_provincia, id_estado, celular, correo, ruc, usuario, clave) VALUES (:dni, :nombres, :apellidos, :id_departamento, :id_estado, :id_distrito, :celular, :correo, :ruc, :usuario, :clave)");
                 $query->bindParam("dni", $dni, PDO::PARAM_STR);
                 $query->bindParam("nombres", $mombres, PDO::PARAM_STR);
                 $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
                 $query->bindParam("id_departamento", $departamento, PDO::PARAM_STR);
                 $query->bindParam("id_provincia", $provincia, PDO::PARAM_STR);
-                $query->bindParam("id_distrito", $distrito, PDO::PARAM_STR);
+                $query->bindParam("id_distrito", $id_estado, PDO::PARAM_STR);
                 $query->bindParam("celular", $celular, PDO::PARAM_STR);
                 $query->bindParam("correo", $correo, PDO::PARAM_STR);
                 $query->bindParam("ruc", $ruc, PDO::PARAM_STR);
@@ -31,7 +31,7 @@
                                              INNER JOIN tbltipo_usuario ON tbltipo_usuario.id = usuario.id_tipo_usuario
                                              INNER JOIN tbldepartamento ON tbldepartamento.id = usuario.id_departamento
                                              INNER JOIN tblprovincia ON tblprovincia.id = usuario.id_provincia
-                                             INNER JOIN tbldistrito ON tbldistrito.id = usuario.id_distrito
+                                             INNER JOIN tbldistrito ON tbldistrito.id = usuario.id_estado
                                              ORDER BY usuario.nombres ASC");
                 $query->execute();
                 if($query->rowCount() > 0){
@@ -100,7 +100,7 @@
 
         public static function Obtener($conexion, $email){
             try {
-                $query = $conexion->prepare('SELECT A.nombres, A.apellidos, A.correo, A.id_tipo_usuario, B.descripcion FROM usuario A  INNER JOIN tbltipo_usuario B  ON B.id = A.id_tipo_usuario WHERE A.correo = :correo');
+                $query = $conexion->prepare('SELECT A.nombres, A.apellidos, A.correo,A.id_estado, A.id_tipo_usuario, B.descripcion FROM usuario A  INNER JOIN tbltipo_usuario B  ON B.id = A.id_tipo_usuario WHERE A.correo = :correo');
                 $query->bindParam('correo',$email, PDO::PARAM_STR);
                 $query->execute();
                 return $query->fetch(PDO::FETCH_OBJ);
