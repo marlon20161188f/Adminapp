@@ -356,7 +356,7 @@ code {
 .sidebar a:focus, .sidebar a:hover, .sidebar a:active {
   background-color: #5fe6b9 !important; }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 436px) {
   #wrapper .sidebar-nav {
     display: none; }
 
