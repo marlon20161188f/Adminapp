@@ -61,6 +61,7 @@ class clsPago
     
     public static function Validar($conexion,  $placa, $marca,$color,$estacionamiento){
         try {
+            date_default_timezone_set('America/Los_Angeles');
             $fecha = date("Y-m-d");
             $query = $conexion->prepare("SELECT placa FROM registro_vehicular WHERE placa = :placa AND marca = :marca AND color = :color AND estacionamiento = :estacionamiento AND fecha = :fecha");
             $query->bindParam("placa", $placa, PDO::PARAM_STR);
