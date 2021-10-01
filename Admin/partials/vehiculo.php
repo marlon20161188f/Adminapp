@@ -162,6 +162,7 @@
         $('#edit').find('#id').val($('#btn_' + id).data('id'));
         $('#edit').find('#nombres').val($('#btn_' + id).data('nombres'));
         $('#edit').find('#apellidos').val($('#btn_' + id).data('apellidos')); 
+        $('#edit').find('#correo').val($('#btn_' + id).data('correo')); 
         $('#edit').find('#id_tipo_usuario').val($('#btn_' + id).data('id_tipo_usuario')); 
         $('#edit').find('#descripcion').val($('#btn_' + id).data('descripcion')); 
         console.log($('#btn_' + id).data('id'));
