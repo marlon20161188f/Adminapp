@@ -85,35 +85,35 @@
         <form class="form-horizontal" id="edit">
         <div class="row">
             <div class="form-group">
-                <label class="col-12 control-label no-padding" for="nombres">nombres</label>
+                <label class="col-12 control-label no-padding" for="nombres">Nombres</label>
                 <div class="col-12 no-padding">
                     <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U">
-                    <input type="text" class="form-control input-sm" name="nombres" id="nombres" placeholder="Ingrese la nombres del vehículo">
+                    <input type="text" class="form-control input-sm" name="nombres" id="nombres" placeholder="Ingrese los nombres del usuario">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-12 control-label no-padding" for="apellidos">apellidos</label>
+                <label class="col-12 control-label no-padding" for="apellidos">Apellidos</label>
                 <div class="col-12 no-padding">
                     <!-- <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U"> -->
-                    <input type="text" class="form-control input-sm" name="apellidos" id="apellidos" placeholder="Ingrese la apellidos del vehículo">
+                    <input type="text" class="form-control input-sm" name="apellidos" id="apellidos" placeholder="Ingrese los apellidos del usuario">
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="col-12 control-label no-padding" for="correo">correo</label>
                 <div class="col-12 no-padding">
-                    <!-- <input type="hidden" name="id" id="id">
-                    <input type="hidden" name="option" value="U"> -->
+                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="option" value="U"> 
                     <input type="text" class="form-control input-sm" name="correo" id="correo" placeholder="Ingrese el correo del vehículo">
                 </div>
-            </div>
+            </div> -->
             <div class="form-group">
-                <label class="col-12 control-label no-padding" for="id_tipo_usuario">id_tipo_usuario</label>
+                <label class="col-12 control-label no-padding" for="id_tipo_usuario">descripción</label>
                 <div class="col-12 no-padding">
                     <!-- <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U"> -->
-                    <input type="text" class="form-control input-sm" name="id_tipo_usuario" id="id_tipo_usuario" placeholder="Ingrese el id_tipo_usuario del vehículo">
+                    <input type="text" class="form-control input-sm" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del usuario">
                 </div>
             </div>
             <!-- <div class="form-group">
