@@ -141,7 +141,7 @@
 				<div>
 				<h3 class="mb-1 text-center"><?php echo $usuario->nombres; ?></h3>
 				<h5 class="text-muted text-center"><?php echo $usuario->descripcion; ?></h5>
-				<div clas="text-center"><img src="<?php echo $url_site; ?>images/profile.jpg" class="circle " width="100" height="auto"></div>
+				<div class="text-center"><img src="<?php echo $url_site; ?>images/profile.jpg" class="circle " width="100" height="auto"></div>
 </span>
 				</div>
                     
