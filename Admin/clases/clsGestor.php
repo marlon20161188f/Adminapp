@@ -48,7 +48,7 @@ class clsGestor
             $query->bindParam("id", $id, PDO::PARAM_STR);
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
-            $query->bindParam("usuario", $usuario, PDO::PARAM_STR);
+            $query->bindParam("id_tipo_usuario", $id_tipo_usuario, PDO::PARAM_STR);
             $query->execute();
         } catch (PDOException $e) {
             exit($e->getMessage());
