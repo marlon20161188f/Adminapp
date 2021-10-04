@@ -187,7 +187,7 @@
 <script type="text/javascript">
 
   $(document).ready( function () {
-   /* $('#tabla').DataTable({
+    $('#tabla').DataTable({
       'paging': true,
       'lengthChange': true,
       'searching': true,
@@ -200,10 +200,13 @@
       'ajax': '../ajax/forma-de-pago.php?option=R',
       "columns": [
             { "data": "id" },
-            { "data": "descripcion" },
-            { "data": "id_provedor" }
+            { "data": "placa" },
+            { "data": "marca" },
+            { "data": "color" },
+            { "data": "estacionamiento" },
+            { "data": "fecha" }
         ]
-    });*/
+    });
     $('#tabla').DataTable();
   } );
     function editModal(id) {
