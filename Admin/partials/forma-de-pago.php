@@ -137,7 +137,7 @@
             <div class="form-group">
                 <label class="col-12 control-label no-padding" for="placa">Placa</label>
                 <div class="col-12 no-padding">
-                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="id" id="id" value="<?php echo $item['id']; ?>">
                     <input type="hidden" name="option" value="C">
                     <input type="text" class="form-control input-sm" name="placa" id="placa" placeholder="Ingrese la placa del vehículo">
                 </div>
