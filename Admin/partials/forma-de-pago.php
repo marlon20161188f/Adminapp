@@ -74,9 +74,9 @@
             <div class="form-group">
                 <label class="col-12 control-label no-padding" for="placa">Placa</label>
                 <div class="col-12 no-padding">
+                    <input type="text" class="form-control input-sm" name="placa" id="placa" placeholder="Ingrese la placa del vehículo">
                     <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U">
-                    <input type="text" class="form-control input-sm" name="placa" id="placa" placeholder="Ingrese la placa del vehículo">
                 </div>
             </div>
             <div class="form-group">
@@ -186,26 +186,7 @@
 
 <script type="text/javascript">
 
-  $(document).ready( function () {
-   /* $('#tabla').DataTable({
-      'paging': true,
-      'lengthChange': true,
-      'searching': true,
-      'orderning': true,
-      'info': true,
-      'autoWidth': true,
-      'dom':'<<"sm-6"f><"sm-6"l><t>ip>',
-      'order': [],
-      'aaSorting': [],
-      'ajax': '../ajax/forma-de-pago.php?option=R',
-      "columns": [
-            { "data": "id" },
-            { "data": "descripcion" },
-            { "data": "id_provedor" }
-        ]
-    });*/
-    $('#tabla').DataTable();
-  } );
+
     function editModal(id) {
         $('#EditModal').modal('show');
         $('#edit').find('#id').val($('#btn_' + id).data('id'));
@@ -298,4 +279,24 @@
 
       
     }
+    $(document).ready( function () {
+   /* $('#tabla').DataTable({
+      'paging': true,
+      'lengthChange': true,
+      'searching': true,
+      'orderning': true,
+      'info': true,
+      'autoWidth': true,
+      'dom':'<<"sm-6"f><"sm-6"l><t>ip>',
+      'order': [],
+      'aaSorting': [],
+      'ajax': '../ajax/forma-de-pago.php?option=R',
+      "columns": [
+            { "data": "id" },
+            { "data": "descripcion" },
+            { "data": "id_provedor" }
+        ]
+    });*/
+    $('#tabla').DataTable();
+  } );
 </script>
