@@ -70,7 +70,7 @@ class clsGestor
     }
     public static function Validar($conexion,$nombres,$apellidos,$id_tipo_usuario){
         try { 
-            $query = $conexion->prepare("SELECT usuario.nombres FROM usuario INNER JOIN tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.nombres = :nombres AND id_tipo_usuario.apellidos =:apellidos AND id_tipo_usuario.id_tipo_usuario = :id_tipo_usuario");
+            $query = $conexion->prepare("SELECT usuario.nombres FROM usuario INNER JOIN tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.nombres = :nombres AND usuario.apellidos =:apellidos AND usuario.id_tipo_usuario = :id_tipo_usuario");
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
             $query->bindParam("id_tipo_usuario", $id_tipo_usuario, PDO::PARAM_STR);
