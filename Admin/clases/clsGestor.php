@@ -41,8 +41,8 @@ class clsGestor
     public static function Actualizar($conexion, $id, $nombres,$apellidos,$descripcion){
         try {
            
-            $query = $conexion->prepare("UPDATE usuario SET usuario.nombres = :nombres,usuario.apellidos = :apellidos, tbltipo_usuario.descripcion = :descripcion WHERE id = :id FROM usuario INNER JOIN 
-            tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id");
+            $query = $conexion->prepare("UPDATE usuario SET usuario.nombres = :nombres,usuario.apellidos = :apellidos, tbltipo_usuario.descripcion = :descripcion FROM usuario INNER JOIN 
+            tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.id = :id");
             $query->bindParam("id", $id, PDO::PARAM_STR);
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
@@ -54,8 +54,8 @@ class clsGestor
     }
     
     public static function Validar($conexion,$nombres,$apellidos,$descripcion){
-        try {'SELECT U.id,U.nombres,U.apellidos,U.id_tipo_usuario,U.id_estado,U.correo,T.descripcion FROM usuario U INNER JOIN tbltipo_usuario T ON U.id_tipo_usuario=T.id' 
-            $query = $conexion->prepare("SELECT tbltipo_usuario.nombres FROM usuario WHERE usuario.nombres = :nombres AND usuario.apellidos =:apellidos AND tbltipo_usuario.descripcion = :descripcion INNER JOIN tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id");
+        try { 
+            $query = $conexion->prepare("SELECT tbltipo_usuario.nombres FROM usuario INNER JOIN tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.nombres = :nombres AND usuario.apellidos =:apellidos AND tbltipo_usuario.descripcion = :descripcion");
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
             $query->bindParam("descripcion", $descripcion, PDO::PARAM_STR);
