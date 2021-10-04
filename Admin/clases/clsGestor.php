@@ -41,8 +41,8 @@ class clsGestor
     public static function Actualizar($conexion, $id, $nombres,$apellidos,$descripcion){
         try {
            
-            $query = $conexion->prepare("UPDATE usuario SET usuario.nombres = :nombres,usuario.apellidos = :apellidos, tbltipo_usuario.descripcion = :descripcion FROM usuario INNER JOIN 
-            tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.id = :id");
+            $query = $conexion->prepare("UPDATE usuario SET usuario.nombres = :nombres,usuario.apellidos = :apellidos, tbltipo_usuario.descripcion = :descripcion WHERE usuario.id = :id FROM usuario INNER JOIN 
+            tbltipo_usuario ON usuario.id_tipo_usuario = tbltipo_usuario.id ");
             $query->bindParam("id", $id, PDO::PARAM_STR);
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
