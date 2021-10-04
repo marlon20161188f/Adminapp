@@ -54,14 +54,15 @@ class clsGestor
             exit($e->getMessage());
         }
     }
-    public static function Cambiar($conexion, $cambio){
+    public static function Cambiar($conexion, $id, $id_estado){
         try {
-           
+           if($id_estado=="1"){$id_estado="0";}
+           else{$id_estado="1";}
             $query = $conexion->prepare("UPDATE usuario 
-             SET usuario.id_estado = :cambio
+             SET usuario.id_estado = :id_estado
             WHERE usuario.id = :id");
             $query->bindParam("id", $id, PDO::PARAM_STR);
-            $query->bindParam("cambio", $cambio, PDO::PARAM_STR);
+            $query->bindParam("id_estado", $id_estado, PDO::PARAM_STR);
             $query->execute();
         } catch (PDOException $e) {
             exit($e->getMessage());
