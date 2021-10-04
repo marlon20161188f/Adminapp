@@ -42,12 +42,12 @@
                                         <?php  
                                         if($item['descripcion'] =="Administrador"){
                                           echo'<td><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs" disabled onclick="Cambiar_Estado('.$item['id'].','.$item['id_estado'].')">Activo</button></td>';
-                                        }
+                                        }else{
                                         if($item['id_estado']!="1"){
                                             echo'<td><button id="bn_'.$item['id'].'" class="btn btn-danger btnprueba btn-xs" onclick="Cambiar_Estado('.$item['id'].','.$item['id_estado'].')">Inactivo</button></td>';
                                           }else{
                                             echo'<td><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs" onclick="Cambiar_Estado('.$item['id'].','.$item['id_estado'].')">Activo</button></td>';
-                                          }?>
+                                          }}?>
                                         <td>
                                         <button id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="button" onclick="editModal(<?php echo $item['id']; ?>);" 
                                         data-id="<?php echo $item['id']; ?>" data-nombres="<?php echo $item['nombres']; ?>"data-apellidos="<?php echo $item['apellidos']; ?>" 
