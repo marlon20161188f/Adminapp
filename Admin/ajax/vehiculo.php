@@ -6,12 +6,12 @@
     require '../clases/clsGestor.php';
 
     if($_POST['option'] == 'C'){
-        $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['correo'], $_POST['id_tipo_usuario']);
+        $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['correo'], $_POST['descripcion']);
 
         if($validar == true){
             echo json_encode(array('success' => 2));
         }else{
-            $registro = clsGestor::Registro(Conexion::getInstancia(),  $_POST['nombres'], $_POST['apellidos'], $_POST['correo'], $_POST['id_tipo_usuario']);
+            $registro = clsGestor::Registro(Conexion::getInstancia(),  $_POST['nombres'], $_POST['apellidos'], $_POST['correo'], $_POST['descripcion']);
             if($registro > 0){
                 echo json_encode(array('success' => 1));
             }else{
@@ -21,11 +21,11 @@
     }
 
     if($_POST['option'] == 'U'){
-        $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['id_tipo_usuario']);
+        $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['descripcion']);
         if($validar == true){
             echo json_encode(array('success' => 2));
         }else{
-            clsGestor::Actualizar(Conexion::getInstancia(), $_POST['id'],  $_POST['nombres'], $_POST['apellidos'], $_POST['id_tipo_usuario']);
+            clsGestor::Actualizar(Conexion::getInstancia(), $_POST['id'],  $_POST['nombres'], $_POST['apellidos'], $_POST['descripcion']);
             echo json_encode(array('success' => 1));
         } 
     }
