@@ -40,9 +40,9 @@
                                         <td><?php echo $item['descripcion']; ?></td>
                                         
                                         <?php  if($item['id_estado']!="1"){
-                                            echo'<td><button id="bn_'.$item['id'].'" class="btn btn-danger btnprueba btn-xs">Inactivo</button></td>';
+                                            echo'<td><input type="hidden" name="cambio" value="1"><button id="bn_'.$item['id'].'" class="btn btn-danger btnprueba btn-xs" onclick="Cambiar_Estado('.$item['id'].')">Inactivo</button></td>';
                                           }else{
-                                            echo'<td><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs">Activo</button></td>';
+                                            echo'<td><input type="hidden" name="cambio" value="0"><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs" onclick="Cambiar_Estado('.$item['id'].')">Activo</button></td>';
                                           }?>
                                         <td>
                                         <button id="btn_<?php echo $item['id']; ?>" class="btn btn-secondary btn-sm btn-circle margin" type="button" onclick="editModal(<?php echo $item['id']; ?>);" 
@@ -186,6 +186,30 @@
             type: 'POST',
             url: '../ajax/vehiculo.php',
             data: {option:'D', id: id},
+            success: function(response) {
+              var jsonData = JSON.parse(response);
+              if(jsonData.success == "1"){
+            $('#MessageCrud').html('<div class="alert bg-success" role="alert"><em class="fa fa-check-circle mr-2"></em>Se eliminó correctamente el vehiculo seleccionado. Por favor de comprobar los cambios.<a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>');
+          }
+            }
+          });
+  } 
+})
+      
+
+      
+    }
+    function Cambiar_Estado(id) {
+      Swal.fire({
+  title: '¿Usted esta seguro de eliminar el vehiculo seleccionado?',
+  showCancelButton: true,
+  confirmButtonText: `ACEPTAR`,
+}).then((result) => {
+  if (result.isConfirmed) {
+    $.ajax({
+            type: 'POST',
+            url: '../ajax/vehiculo.php',
+            data: {option:'R', id: id},
             success: function(response) {
               var jsonData = JSON.parse(response);
               if(jsonData.success == "1"){

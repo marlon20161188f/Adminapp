@@ -19,7 +19,10 @@
             }
         } 
     }
-
+    if($_POST['option'] =='R'){
+        clsGestor::Cambiar(Conexion::getInstancia(), $_POST['id'],$_POST['cambio']);
+            echo json_encode(array('success' => 1));
+    }
     if($_POST['option'] == 'U'){
         $validar = clsGestor::Validar(Conexion::getInstancia(), $_POST['nombres'], $_POST['apellidos'], $_POST['descripcion']);
         if($validar == true){
