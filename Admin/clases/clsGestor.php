@@ -38,17 +38,17 @@ class clsGestor
         }
     }
 
-    public static function Actualizar($conexion, $id, $nombres,$apellidos,$descripcion){
+    public static function Actualizar($conexion, $id, $nombres,$apellidos,$id_tipo_usuario){
         try {
            
             $query = $conexion->prepare("UPDATE usuario INNER JOIN 
             tbltipo_usuario ON usuario.id_tipo_usuario = tbltipo_usuario.id
-             SET usuario.nombres = :nombres,usuario.apellidos = :apellidos, tbltipo_usuario.descripcion = :descripcion
+             SET usuario.nombres = :nombres,usuario.apellidos = :apellidos, usuario.id_tipo_usuario = :id_tipo_usuario
             WHERE usuario.id = :id");
             $query->bindParam("id", $id, PDO::PARAM_STR);
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
-            $query->bindParam("descripcion", $descripcion, PDO::PARAM_STR);
+            $query->bindParam("usuario", $usuario, PDO::PARAM_STR);
             $query->execute();
         } catch (PDOException $e) {
             exit($e->getMessage());
@@ -68,12 +68,12 @@ class clsGestor
             exit($e->getMessage());
         }
     }
-    public static function Validar($conexion,$nombres,$apellidos,$descripcion){
+    public static function Validar($conexion,$nombres,$apellidos,$id_tipo_usuario){
         try { 
-            $query = $conexion->prepare("SELECT usuario.nombres FROM usuario INNER JOIN tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.nombres = :nombres AND usuario.apellidos =:apellidos AND tbltipo_usuario.descripcion = :descripcion");
+            $query = $conexion->prepare("SELECT usuario.nombres FROM usuario INNER JOIN tbltipo_usuario ON usuario.id_tipo_usuario=tbltipo_usuario.id WHERE usuario.nombres = :nombres AND id_tipo_usuario.apellidos =:apellidos AND id_tipo_usuario.id_tipo_usuario = :id_tipo_usuario");
             $query->bindParam("nombres", $nombres, PDO::PARAM_STR);
             $query->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
-            $query->bindParam("descripcion", $descripcion, PDO::PARAM_STR);
+            $query->bindParam("id_tipo_usuario", $id_tipo_usuario, PDO::PARAM_STR);
             
             $query->execute();
             if($query->rowCount() > 0){

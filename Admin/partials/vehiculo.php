@@ -37,7 +37,7 @@
                                     <td><?php echo $item['nombres']; ?></td>
                                         <td><?php echo $item['apellidos']; ?></td>
                                         <td><?php echo $item['correo']; ?></td>
-                                        <td><?php echo $item['descripcion']; ?></td>
+                                        <td><?php echo $item['id_tipo_usuario']; ?></td>
                                         
                                         <?php  
                                         if($item['descripcion'] =="Administrador"){
@@ -117,7 +117,11 @@
                 <div class="col-12 no-padding">
                     <!-- <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U"> -->
-                    <input type="text" class="form-control input-sm" name="descripcion" id="descripcion" placeholder="Ingrese la descripción del usuario">
+                   <select name="id_tipo_usuario" placeholder="Ingrese la descripción del usuario">
+                   <option  name="id_tipo_usuario" id="id_tipo_usuario" value="1">Operario</option>
+                   <option  name="id_tipo_usuario" id="id_tipo_usuario" value="2">Supervisor</option>
+                   <option  name="id_tipo_usuario" id="id_tipo_usuario" value="3">Administrador</option>
+                  </select>                              
                 </div>
             </div>
             <!-- <div class="form-group">
