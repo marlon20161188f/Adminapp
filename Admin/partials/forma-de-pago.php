@@ -82,24 +82,24 @@
             <div class="form-group">
                 <label class="col-12 control-label no-padding" for="marca">Marca</label>
                 <div class="col-12 no-padding">
-                    <input type="hidden" name="id" id="id">
-                    <input type="hidden" name="option" value="U"> 
+                    <!-- <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="option" value="U"> -->
                     <input type="text" class="form-control input-sm" name="marca" id="marca" placeholder="Ingrese la marca del vehículo">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-12 control-label no-padding" for="color">Color</label>
                 <div class="col-12 no-padding">
-                     <input type="hidden" name="id" id="id">
-                    <input type="hidden" name="option" value="U"> 
+                    <!-- <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="option" value="U"> -->
                     <input type="text" class="form-control input-sm" name="color" id="color" placeholder="Ingrese el color del vehículo">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-12 control-label no-padding" for="estacionamiento">Estacionamiento</label>
                 <div class="col-12 no-padding">
-                    <input type="hidden" name="id" id="id">
-                    <input type="hidden" name="option" value="U"> 
+                    <!-- <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="option" value="U"> -->
                     <input type="text" class="form-control input-sm" name="estacionamiento" id="estacionamiento" placeholder="Ingrese el estacionamiento del vehículo">
                 </div>
             </div>
