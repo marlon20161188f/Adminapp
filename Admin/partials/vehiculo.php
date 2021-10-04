@@ -117,10 +117,15 @@
                 <div class="col-12 no-padding">
                     <!-- <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U"> -->
-                   <select name="id_tipo_usuario" placeholder="Elije la descripción del usuario">
-                   <option  name="id_tipo_usuario"  value="1">Operador</option>
+                   <select class="form-control"  name="id_tipo_usuario" placeholder="Elije la descripción del usuario">
+                   <?php
+                          foreach ($list_estados as $item) {     
+                      ?>
+                          <option value="<?php echo $item['id_tipo_usuario']; ?>"><?php echo $item['descripcion']; ?></option>
+                      <?php } ?>
+                   <!-- <option  name="id_tipo_usuario"  value="1">Operador</option>
                    <option  name="id_tipo_usuario"  value="2">Supervisor</option>
-                   <option  name="id_tipo_usuario"  value="3">Administrador</option>
+                   <option  name="id_tipo_usuario"  value="3">Administrador</option> -->
                   </select>                              
                 </div>
             </div>
