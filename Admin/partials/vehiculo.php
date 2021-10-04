@@ -118,6 +118,7 @@
                     <!-- <input type="hidden" name="id" id="id">
                     <input type="hidden" name="option" value="U"> -->
                    <select name="id_tipo_usuario" placeholder="Ingrese la descripción del usuario">
+                   <option  ></option>
                    <option  name="id_tipo_usuario" id="id_tipo_usuario" value="1">Operador</option>
                    <option  name="id_tipo_usuario" id="id_tipo_usuario" value="2">Supervisor</option>
                    <option  name="id_tipo_usuario" id="id_tipo_usuario" value="3">Administrador</option>
