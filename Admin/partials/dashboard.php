@@ -17,6 +17,7 @@
                             <span class="col-md-1 col-md-offset-2 "><i class="fa fa-car"></i></span>
                             <div class="input-group-lg text-center  mt-1">
                                 <input id="caja_busqueda" required name="PLACA" type="text" placeholder="Ingrese placa" class="form-control text-center mx-auto" style="width: 200px;" maxlength="6" >
+                                
                                 <!-- <input required name="PLACA" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ingrese palabra clave">    placeholder="Usern" pattern="[A-Z]"-->
                                 <!-- <input name="buscar" type="hidden" class="form-control mb-2" id="caja_busqueda"value="v"> -->
                             </div>

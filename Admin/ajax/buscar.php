@@ -1,6 +1,4 @@
 <?php
-  $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_SESSION['email']);
-  $usuario=$usuario->nombres;
 $mysqli=new mysqli("b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com","ulcoechpsy7vemc6","poShw9zjQ6zjJHwl5bZ3","b7nvpy1vtadduxzlqosv");
 $mysqli2=new mysqli("b7nvpy1vtadduxzlqosv-mysql.services.clever-cloud.com","ulcoechpsy7vemc6","poShw9zjQ6zjJHwl5bZ3","b7nvpy1vtadduxzlqosv");
 $salida="";
@@ -10,8 +8,8 @@ if(isset($_POST['consulta'])){
     WHERE placa LIKE '%".$q."%' OR marca LIKE '%".$q."%' OR color LIKE '%".$q."%'";
      date_default_timezone_set("America/Lima");
      $fecha = date("Y-m-d H:i:s");
-    $sql = "INSERT INTO registro_ingreso(placa,fecha,usuario)
-     VALUES('".$q."','".$fecha."','".$usuario."')";
+    $sql = "INSERT INTO registro_ingreso(placa,fecha)
+     VALUES('".$q."','".$fecha."')";
     $resultado=$mysqli->query($query);
     if( $resultado->num_rows > 1){
         $salida.="<table class='tabla_datos heading text-center' width='98%'>

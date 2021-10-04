@@ -1,8 +1,6 @@
 <?php
     date_default_timezone_set('America/Lima');
-    $usuario = clsUsuario::Obtener(Conexion::getInstancia(), $_SESSION['email']);
-    $usuario=$usuario->nombres;
-    $list = clsIngreso::Listar(Conexion::getInstancia(),$usuario);
+    $list = clsIngreso::Listar(Conexion::getInstancia());
     //$list_estados = clsEstado::ListarActivo(Conexion::getInstancia());
 ?>
 <div class="col-sm-12">
