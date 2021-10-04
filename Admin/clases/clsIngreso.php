@@ -17,11 +17,13 @@ class clsIngreso
         }
     }
 
-    public static function Listar($conexion){
+    public static function Listar($conexion,$usuario){
         try {
             $query = $conexion->prepare("SELECT registro_vehicular.marca, registro_vehicular.color, registro_vehicular.estacionamiento, registro_ingreso.id, registro_ingreso.placa, registro_ingreso.fecha FROM registro_ingreso
             INNER JOIN registro_vehicular ON registro_ingreso.placa=registro_vehicular.placa
+             WHERE registro_ingreso.usuario= :usuario
              ORDER BY registro_ingreso.fecha DESC ");
+             $query->bindParam("usuario", $usuario, PDO::PARAM_STR);
             $query->execute();
             
                 return $query->fetchAll();
