@@ -20,7 +20,7 @@
         } 
     }
     if($_POST['option'] =='R'){
-        clsGestor::Cambiar(Conexion::getInstancia(), $_POST['id'],$_POST['cambio']);
+        clsGestor::Cambiar(Conexion::getInstancia(), $_POST['id'],$_POST['id_estado']);
             echo json_encode(array('success' => 1));
     }
     if($_POST['option'] == 'U'){
