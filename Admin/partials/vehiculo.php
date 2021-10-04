@@ -39,7 +39,11 @@
                                         <td><?php echo $item['correo']; ?></td>
                                         <td><?php echo $item['descripcion']; ?></td>
                                         
-                                        <?php  if($item['id_estado']!="1"){
+                                        <?php  
+                                        if($item['descripcion'] =="Administrador"){
+                                          echo'<td><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs" disabled onclick="Cambiar_Estado('.$item['id'].','.$item['id_estado'].')">Activo</button></td>';
+                                        }
+                                        if($item['id_estado']!="1"){
                                             echo'<td><button id="bn_'.$item['id'].'" class="btn btn-danger btnprueba btn-xs" onclick="Cambiar_Estado('.$item['id'].','.$item['id_estado'].')">Inactivo</button></td>';
                                           }else{
                                             echo'<td><button id="bn_'.$item['id'].'" class="btn btn-success btnprueba btn-xs" onclick="Cambiar_Estado('.$item['id'].','.$item['id_estado'].')">Activo</button></td>';
