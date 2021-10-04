@@ -137,23 +137,6 @@
 
 <script type="text/javascript">
  $(document).ready( function () {
-   /* $('#tabla').DataTable({
-      'paging': true,
-      'lengthChange': true,
-      'searching': true,
-      'orderning': true,
-      'info': true,
-      'autoWidth': true,
-      'dom':'<<"sm-6"f><"sm-6"l><t>ip>',
-      'order': [],
-      'aaSorting': [],
-      'ajax': '../ajax/forma-de-pago.php?option=R',
-      "columns": [
-            { "data": "id" },
-            { "data": "descripcion" },
-            { "data": "id_provedor" }
-        ]
-    });*/
     $('#tabla').DataTable();
   } );
 
@@ -188,10 +171,7 @@
             }
             
             //actualizar la tabla
-            $('#tabla').DataTable().ajax.reload();
-            window.setTimeout(function(){ 
-                $('.alert').alert('close');
-            }, 3000);
+           
         }
         }); 
     }
