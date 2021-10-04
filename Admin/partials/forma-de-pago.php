@@ -16,7 +16,7 @@
                     <h3 class="card-title">Lista de Vehículos Registrados</h3>
 
                     <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                        <table class="table table-striped" width="100%" id='tabla'>
+                        <table class="table table-striped" width="100%" id="tabla_id">
                             <thead>
                                 <tr>
                                     <th>PLACA</th>
@@ -185,7 +185,9 @@
 </div>
 
 <script type="text/javascript">
-
+$(document).ready( function () {
+    $('#tabla_id').DataTable();
+  } );
 
     function editModal(id) {
         $('#EditModal').modal('show');
@@ -219,7 +221,7 @@
             }
             
             //actualizar la tabla
-            $('#tabla').DataTable().ajax.reload();
+            $('#tabla_id').DataTable().ajax.reload();
             window.setTimeout(function(){ 
                 $('.alert').alert('close');
             }, 3000);
@@ -247,7 +249,7 @@
           }
         
           //actualizar la tabla
-          $('#tabla').DataTable().ajax.reload();
+          $('#tabla_id').DataTable().ajax.reload();
             window.setTimeout(function(){ 
                 $('.alert').alert('close');
             }, 3000);
@@ -279,27 +281,5 @@
 
       
     }
-    $('#tabla').dataTable( {<font></font>
-    "paging": TRUE<font></font>
-} );
-    $(document).ready( function () {
-   /* $('#tabla').DataTable({
-      'paging': true,
-      'lengthChange': true,
-      'searching': true,
-      'orderning': true,
-      'info': true,
-      'autoWidth': true,
-      'dom':'<<"sm-6"f><"sm-6"l><t>ip>',
-      'order': [],
-      'aaSorting': [],
-      'ajax': '../ajax/forma-de-pago.php?option=R',
-      "columns": [
-            { "data": "id" },
-            { "data": "descripcion" },
-            { "data": "id_provedor" }
-        ]
-    });*/
-    $('#tabla').DataTable();
-  } );
+ 
 </script>
