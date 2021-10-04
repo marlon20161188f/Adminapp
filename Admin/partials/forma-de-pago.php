@@ -221,10 +221,10 @@ $(document).ready( function () {
             }
             
             //actualizar la tabla
-            $('#tabla_id').DataTable().ajax.reload();
-            window.setTimeout(function(){ 
-                $('.alert').alert('close');
-            }, 3000);
+            // $('#tabla_id').DataTable().ajax.reload();
+            // window.setTimeout(function(){ 
+            //     $('.alert').alert('close');
+            // }, 3000);
         }
         }); 
     }
@@ -249,10 +249,10 @@ $(document).ready( function () {
           }
         
           //actualizar la tabla
-          $('#tabla_id').DataTable().ajax.reload();
-            window.setTimeout(function(){ 
-                $('.alert').alert('close');
-            }, 3000);
+          // $('#tabla_id').DataTable().ajax.reload();
+          //   window.setTimeout(function(){ 
+          //       $('.alert').alert('close');
+          //   }, 3000);
         }
       });
     }
