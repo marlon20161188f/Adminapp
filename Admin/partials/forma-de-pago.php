@@ -16,7 +16,7 @@
                     <h3 class="card-title">Lista de Vehículos Registrados</h3>
 
                     <div class="dataTables_wrapper container-fluid dt-bootstrap4">
-                        <table class="table table-striped" width="100%" id="tabla">
+                        <table class="table table-striped" width="100%" >
                             <thead>
                                 <tr>
                                     <th>PLACA</th>
