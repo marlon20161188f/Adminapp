@@ -74,7 +74,7 @@ if(isset($_POST['consulta'])){
                     ";?>
                     
                     </tbody></table><div class="form-group text-center"> 
-                    <button type="submit" class="btn btn-primary  btn-lg " value="<?php $mysqli2->query($sql) ?>"><i class="fa fa-plus"></i>Registrar Ingreso</button>
+                    <button type="submit" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
                      </div>
                      </div>
              
@@ -84,30 +84,11 @@ if(isset($_POST['consulta'])){
 }else {
     $salida="";
 }
-//     $resultado=$mysqli->query($query);
-// if( $resultado->num_rows > 0){
-//     $salida.="<table class='tabla_datos'>
-//                 <thead>
-//                     <tr>
-//                         <td>ID</td>
-//                         <td>Nombre</td>
-//                         <td>Marca</td>
-//                         <td>Modelo</td> 
-//                     </tr>
-//                 </thead>
-//                 <tbody>"; 
-//                 while($fila=$resultado->fetch_assoc()){
-//                     $salida.="<tr>
-//                     <td>".$fila['Cod_producto']."</td>
-//                     <td>".$fila['Nombre']."</td>
-//                     <td>".$fila['Marca']."</td>
-//                     <td>".$fila['Modelo']."</td> 
-//                 </tr>";
-//                 }
-//                 $salida.="</tbody></table>";
-
-// }else{
-//             $salida.="No hay datos :c";
-// }
 echo $salida;
 ?>
+<script>
+    function miFunc() {
+    alert('Se registrado un vehículo!');
+    <?php $mysqli2->query($sql) ?>
+  }
+</script>
