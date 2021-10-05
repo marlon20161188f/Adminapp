@@ -74,8 +74,9 @@ if(isset($_POST['consulta'])){
                     ";?>
                     
                     </tbody></table><div class="form-group text-center"> 
-                    <button type="submit" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
-                     </div>
+                    <form class="form-horizontal" id="register">
+                    <button type="submit" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
+                   </form></div>
                      </div>
              
                   <?php
@@ -86,9 +87,40 @@ if(isset($_POST['consulta'])){
 }
 echo $salida;
 ?>
-<script>
+
+<script type="text/javascript">
+$(document).ready( function () {
+  } );
     function miFunc() {
-    alert('Se registrado un vehículo!');
-    <?php $mysqli2->query($sql) ?>
-  }
+      let parametros = new FormData($('#register')[0]);
+      $.ajax({
+        type: 'POST',
+        url: '../registro_vehicular.php',
+        data: parametros,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+          console.log(response);  
+          var jsonData = JSON.parse(response);
+            console.log(jsonData.success);
+            $('#register').modal('hide');
+            if(jsonData.success == "2"){
+            $('#MessageCrud').html('<div class="alert bg-warning" role="alert"><em class="fa fa-exclamation-triangle-circle mr-2"></em>Se encontró mas de un 1 registró con la misma descripción, por favor intente con otro término.<a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>');
+            }
+            else{
+            $('#MessageCrud').html('<div class="alert bg-success" role="alert"><em class="fa fa-check-circle mr-2"></em>Se actualizó correctamente el vehiculo seleccionado. Por favor de comprobar los cambios.<a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>');
+            }
+            
+            //actualizar la tabla
+            // $('#tabla_id').DataTable().ajax.reload();
+            // window.setTimeout(function(){ 
+            //     $('.alert').alert('close');
+            // }, 3000);
+        }
+        }); 
+    }
+
+ 
+
+ 
 </script>
