@@ -94,7 +94,7 @@ $(document).ready( function () {
     function miFunc() {
       $.ajax({
         type: 'POST',
-        url: '../registro_vehicular.php',
+        url: '../registrar_vehiculo.php',
         data: parametros,
         contentType: false,
         processData: false,
