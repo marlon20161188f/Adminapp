@@ -75,8 +75,10 @@ if(isset($_POST['consulta'])){
                     
                     </tbody></table><div class="form-group text-center"> 
                     <form class="form-horizontal" id="register" method="POST">
-                    <button type="submit" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
-                   </form></div>
+                        <input type="hidden" name="click" value="1">
+                   </form>      
+             <button type="submit" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
+                    </div>
                      </div>
              
                   <?php
@@ -88,39 +90,22 @@ if(isset($_POST['consulta'])){
 echo $salida;
 ?>
 
-<script type="text/javascript">
-$(document).ready( function () {
-  } );
-    function miFunc() {
+<script type="text/javascript"> 
+function miFunc() {
       $.ajax({
         type: 'POST',
         url: '../registrar_vehiculo.php',
-        data: parametros,
-        contentType: false,
-        processData: false,
+        data: $('#register').serialize(),
         success: function(response) {
-          console.log(response);  
           var jsonData = JSON.parse(response);
-            console.log(jsonData.success);
-            $('#register').modal('hide');
-            if(jsonData.success == "2"){
-            $('#MessageCrud').html('<div class="alert bg-warning" role="alert"><em class="fa fa-exclamation-triangle-circle mr-2"></em>Se encontró mas de un 1 registró con la misma descripción, por favor intente con otro término.<a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>');
-            }
-            else{
-            $('#MessageCrud').html('<div class="alert bg-success" role="alert"><em class="fa fa-check-circle mr-2"></em>Se actualizó correctamente el vehiculo seleccionado. Por favor de comprobar los cambios.<a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>');
-            }
-            
-            //actualizar la tabla
-            // $('#tabla_id').DataTable().ajax.reload();
-            // window.setTimeout(function(){ 
-            //     $('.alert').alert('close');
-            // }, 3000);
+          console.log(jsonData.success);
+          $('#RegisterModal').modal('hide');
+          if(jsonData.success == "1"){
+            $('#MessageCrud').html('<div class="alert bg-success" role="alert"><em class="fa fa-check-circle mr-2"></em>Se registró correctamente el vehiculo ingresado. Por favor de comprobar el registro.<a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>');
+          }
+      
         }
-        }); 
-        console.log($_POST['registrar']);
+      });
     }
-
- 
-
- 
+   
 </script>
