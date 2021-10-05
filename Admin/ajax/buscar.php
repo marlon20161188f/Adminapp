@@ -92,7 +92,6 @@ echo $salida;
 $(document).ready( function () {
   } );
     function miFunc() {
-      let parametros = new FormData($('#register')[0]);
       $.ajax({
         type: 'POST',
         url: '../registro_vehicular.php',
