@@ -94,7 +94,7 @@ echo $salida;
 function miFunc() {
       $.ajax({
         type: 'POST',
-        url: '../registrar_vehiculo.php',
+        url: '../ajax/registrar_vehiculo.php',
         data: $('#register').serialize(),
         success: function(response) {
           var jsonData = JSON.parse(response);
