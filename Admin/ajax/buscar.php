@@ -77,7 +77,7 @@ if(isset($_POST['consulta'])){
                     <form class="form-horizontal" id="register" method="POST">
                         <input type="hidden" name="click" value="1">
                    </form>      
-             <button type="submit" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
+             <button type="button" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
                     </div>
                      </div>
              
