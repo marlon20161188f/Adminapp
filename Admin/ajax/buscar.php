@@ -71,13 +71,14 @@ if(isset($_POST['consulta'])){
                        <th align='center'width='34%'><H2 style='background-color:#99e6cd' class='letra'>".$fila['marca']."</H2></th>
                         
                    </tr>
-                    ";
-                    $salida.="</tbody></table><div class='form-group text-center'> 
-                    <button type='submit' class='btn btn-primary  btn-lg ' value='".$mysqli2->query($sql)."'><i class='fa fa-plus'></i>Registrar Ingreso</button>
+                    ";?>
+                    
+                    </tbody></table><div class="form-group text-center"> 
+                    <button type="submit" class="btn btn-primary  btn-lg " value="<?php $mysqli2->query($sql) ?>"><i class="fa fa-plus"></i>Registrar Ingreso</button>
                      </div>
                      </div>
-             ";
-
+             
+                  <?php
                 }
     }}
 }else {
