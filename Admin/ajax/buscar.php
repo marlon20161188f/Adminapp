@@ -79,7 +79,7 @@ if(isset($_POST['consulta'])){
                         <input type="hidden" name="placa" value="<?php echo $q ?>">
                         <input type="hidden" name="fecha" value="<?php echo $fecha ?>">
                    </form>      
-             <button type="button" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
+             <button type="submit" name="registrar" value="U" class="btn btn-primary  btn-lg " onclick="miFunc()"><i class="fa fa-plus"></i>Registrar Ingreso</button>
                     </div>
                      </div>
              
