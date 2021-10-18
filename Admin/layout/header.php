@@ -13,9 +13,9 @@
 	<title>Panel Administrativo</title>
    <link href="<?php echo $url_site; ?>dist/css/bootstrap.min.css" rel="stylesheet">
    <link href="<?php echo $url_site; ?>css/font-awesome.css" rel="stylesheet">
-   <link href="<?php echo $url_site; ?>css/sb-admin-2.min.css" rel="stylesheet">
+   <link href="<?php echo $url_site; ?>css/sb-admin-2.mins.css" rel="stylesheet">
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <link href="<?php echo $url_site; ?>css/styless.css" rel="stylesheet">
+    <link href="<?php echo $url_site; ?>css/styles.css" rel="stylesheet">
 	
 	<link href="<?php echo $url_site; ?>css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -23,7 +23,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?php echo $url_site; ?>css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?php echo $url_site; ?>css/sb-admin-2.mins.css" rel="stylesheet">
 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="<?php echo $url_site; ?>dist/js/bootstrap.min.js"></script>

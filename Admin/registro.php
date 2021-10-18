@@ -14,7 +14,7 @@ require 'clases/clsUsuario.php'; // clase de usuario
     <title>Registro</title>
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/styless.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body class="login-page" style=" background-image:linear-gradient(
     rgba(0, 0, 0, 0),
