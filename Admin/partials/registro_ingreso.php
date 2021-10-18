@@ -39,6 +39,7 @@
                         <table class="table table-striped" width="100%" id='tabla'>
                             <thead>
                                 <tr>
+                                    <th hidden>ID</th>
                                     <th>PLACA</th>
                                     <th>MARCA</th>
                                     <th>COLOR</th>
@@ -53,6 +54,7 @@
                                     foreach ($list as $item) {     
                                 ?>
                                     <tr>
+                                        <td type="hidden"><?php echo $item['id']; ?></td>
                                         <td><?php echo $item['placa']; ?></td>
                                         <td><?php echo $item['marca']; ?></td>
                                         <td><?php echo $item['color']; ?></td>
