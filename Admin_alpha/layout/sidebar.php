@@ -1,4 +1,14 @@
-<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
+<style type="text/css">
+#miid{
+	background-repeat: no-repeat;
+	text-rendering: optimizeLegibility;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg");
+	background-position: center center;
+	font-family: Roboto,sans-serif;
+}
+	</style>
+
+<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2" id="miid">
      <ul class="navbar-nav ml-auto " >
 
 		<!-- Nav Item - Search Dropdown (Visible Only XS) -->
