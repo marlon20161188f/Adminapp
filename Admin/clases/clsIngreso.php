@@ -21,7 +21,7 @@ class clsIngreso
         try {
             $query = $conexion->prepare("SELECT registro_vehicular.marca, registro_vehicular.color, registro_vehicular.estacionamiento, registro_ingreso.id, registro_ingreso.placa, registro_ingreso.fecha FROM registro_ingreso
             INNER JOIN registro_vehicular ON registro_ingreso.placa=registro_vehicular.placa
-             ORDER BY registro_ingreso.id DESC ");
+             ORDER BY registro_ingreso.fecha DESC ");
             $query->execute();
             
                 return $query->fetchAll();
